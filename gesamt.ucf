@@ -1,0 +1,33 @@
+
+
+NET "clk_in" LOC = M21;
+NET "sync_hor" LOC = B22;
+NET "sync_vert" LOC = A22;
+NET "red[7]" LOC = A8;
+NET "red[6]" LOC = B8;
+NET "red[5]" LOC = A7;
+NET "red[4]" LOC = A6;
+NET "red[3]" LOC = B6;
+NET "red[2]" LOC = A5;
+NET "red[1]" LOC = A4;
+NET "red[0]" LOC = B4;
+NET "green[7]" LOC = A16;
+NET "green[6]" LOC = N18;
+NET "green[5]" LOC = A13;
+NET "green[4]" LOC = N17;
+NET "green[3]" LOC = A12;
+NET "green[2]" LOC = B12;
+NET "green[1]" LOC = A11;
+NET "green[0]" LOC = A9;
+NET "blue[7]" LOC = C20;
+NET "blue[6]" LOC = C19;
+NET "blue[5]" LOC = K18;
+NET "blue[4]" LOC = C18;
+NET "blue[3]" LOC = M18;
+NET "blue[2]" LOC = L17;
+NET "blue[1]" LOC = B18;
+NET "blue[0]" LOC = A18;
+
+# PlanAhead Generated physical constraints 
+
+NET "clk_monitor" LOC = C14;
