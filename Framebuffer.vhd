@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.All;
+
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -38,6 +40,8 @@ entity Framebuffer is
            value_in : in  STD_LOGIC_VECTOR (12 downto 0);
            data_pixel_x : in  STD_LOGIC_VECTOR (11 downto 0);
            data_pixel_y : in  STD_LOGIC_VECTOR (11 downto 0);
+			  take_data: in STD_Logic;
+			  writeable: out STD_LOGIC;
            ram_address : out STD_LOGIC_VECTOR (31 downto 0);
            ram_we : out  STD_LOGIC;
            ram_data_input : in  STD_LOGIC_VECTOR (12 downto 0);
@@ -52,16 +56,22 @@ PROCESS(clk)
 BEGIN
     if(rising_edge(clk)) then
         if(vga_mutex='0') then
+				writeable<='1';
+				if(take_data = '1') then
+					ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x)), ram_address'length));
+					--std_logic_vector(to_unsigned(((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x)) mod 1280)/16)+((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x))/(1280*16))*80), ram_address'length));
+					ram_we <= '1';
+					ram_data_output <= value_in;
+				end if;
 				-- Read data from the input
-				ram_address <= (((integer(to_unsigned(data_pixel_y))*1280 + data_pixel_x) mod 1280)/16)+((integer(to_unsigned(data_pixel_y))*1280 + data_pixel_x)/(1280*16))*80;
-				--ram_we <= '1';
 				value_out <= "1111111111111";
 		  else 
-		    -- proviede data from ram to the output
+				writeable<='0';
+				-- proviede data from ram to the output
 				ram_we <= '0';
-				ram_address <= ((((vga_pixel_y)*1280 + vga_pixel_x) mod 1280)/16)+((vga_pixel_y*1280 + vga_pixel_x)/(1280*16))*80;
-				--value_out <= ram_data_input;
-				value_out <= "0000000000000";
+				ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x)), ram_address'length));
+				--std_logic_vector(to_unsigned(((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x)) mod 1280)/16)+((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x))/(1280*16))*80), ram_address'length));
+				value_out <= ram_data_input;
 		  end if;
     end if; 
 END PROCESS;

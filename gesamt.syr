@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.09 secs
+Total CPU time to Xst completion: 0.11 secs
  
 --> Reading design: gesamt.prj
 
@@ -114,20 +114,552 @@ Parsing architecture <xilinx> of entity <clk_wiz_v3_6>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\internal_ram.vhd" into library work
 Parsing entity <internal_ram>.
 Parsing architecture <Behavioral> of entity <internal_ram>.
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\grakatest.vhd" into library work
+Parsing entity <grakatest>.
+Parsing architecture <Behavioral> of entity <grakatest>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" into library work
 Parsing entity <Framebuffer>.
 Parsing architecture <Behavioral> of entity <framebuffer>.
-ERROR:HDLCompiler:69 - "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" Line 56: <to_unsigned> is not declared.
-ERROR:HDLCompiler:622 - "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" Line 56: Near integer ; type conversion expression type cannot be determined uniquely
-ERROR:HDLCompiler:1731 - "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" Line 56: found '0' definitions of operator "+", cannot determine exact overloaded matching definition for "+"
-ERROR:HDLCompiler:1731 - "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" Line 62: found '0' definitions of operator "*", cannot determine exact overloaded matching definition for "*"
-ERROR:HDLCompiler:854 - "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" Line 47: Unit <behavioral> ignored due to previous errors.
-VHDL file C:\AdvancedEmbedded\EndProj\Framebuffer.vhd ignored due to errors
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\gesamt.vhf" into library work
+Parsing entity <gesamt>.
+Parsing architecture <BEHAVIORAL> of entity <gesamt>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <gesamt> (architecture <BEHAVIORAL>) from library <work>.
+
+Elaborating entity <clk_wiz_v3_6> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <VGA_Controller> (architecture <MAIN>) from library <work>.
+
+Elaborating entity <Framebuffer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <internal_ram> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <grakatest> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\grakatest.vhd" Line 75: hpos should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\grakatest.vhd" Line 76: vpos should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <gesamt>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\gesamt.vhf".
+    Set property "INIT = 0" for instance <XLXI_17>.
+    Set property "SRTYPE = SYNC" for instance <XLXI_17>.
+    Set property "DDR_ALIGNMENT = NONE" for instance <XLXI_17>.
+    Summary:
+	no macro.
+Unit <gesamt> synthesized.
+
+Synthesizing Unit <clk_wiz_v3_6>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\ipcore_dir\clk_wiz_v3_6.vhd".
+    Summary:
+	no macro.
+Unit <clk_wiz_v3_6> synthesized.
+
+Synthesizing Unit <VGA_Controller>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\VGA_Controller.vhd".
+WARNING:Xst:647 - Input <data_in<12:3>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit register for signal <pixel_y>.
+    Found 8-bit register for signal <red>.
+    Found 8-bit register for signal <green>.
+    Found 8-bit register for signal <blue>.
+    Found 11-bit register for signal <HPOS>.
+    Found 11-bit register for signal <VPOS>.
+    Found 1-bit register for signal <mutex>.
+    Found 1-bit register for signal <sync_hor>.
+    Found 1-bit register for signal <sync_vert>.
+    Found 12-bit register for signal <pixel_x>.
+    Found 12-bit subtractor for signal <GND_14_o_GND_14_o_sub_6_OUT> created at line 61.
+    Found 12-bit adder for signal <n0088> created at line 59.
+    Found 11-bit adder for signal <VPOS[10]_GND_14_o_add_11_OUT> created at line 75.
+    Found 12-bit subtractor for signal <GND_14_o_GND_14_o_add_4_OUT> created at line 60.
+    Found 12-bit comparator lessequal for signal <n0001> created at line 59
+    Found 11-bit comparator greater for signal <n0003> created at line 59
+    Found 11-bit comparator greater for signal <HPOS[10]_PWR_9_o_LessThan_9_o> created at line 70
+    Found 11-bit comparator lessequal for signal <VPOS[10]_PWR_9_o_LessThan_11_o> created at line 74
+    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_16_o> created at line 80
+    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_17_o> created at line 80
+    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_23_o> created at line 85
+    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_24_o> created at line 85
+    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_25_o> created at line 85
+    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_26_o> created at line 85
+    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_27_o> created at line 90
+    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_28_o> created at line 90
+    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_29_o> created at line 95
+    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_30_o> created at line 95
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  73 D-type flip-flop(s).
+	inferred  14 Comparator(s).
+Unit <VGA_Controller> synthesized.
+
+Synthesizing Unit <Framebuffer>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd".
+    Found 32-bit register for signal <ram_address>.
+    Found 1-bit register for signal <ram_we>.
+    Found 13-bit register for signal <ram_data_output>.
+    Found 13-bit register for signal <value_out>.
+    Found 1-bit register for signal <writeable>.
+    Found 24-bit adder for signal <n0041[23:0]> created at line 61.
+    Found 24-bit adder for signal <n0044[23:0]> created at line 72.
+    Found 12x11-bit multiplier for signal <data_pixel_y[11]_PWR_11_o_MuLt_0_OUT> created at line 61.
+    Found 12x11-bit multiplier for signal <vga_pixel_y[11]_PWR_11_o_MuLt_4_OUT> created at line 72.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  60 D-type flip-flop(s).
+	inferred   1 Multiplexer(s).
+Unit <Framebuffer> synthesized.
+
+Synthesizing Unit <internal_ram>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\internal_ram.vhd".
+WARNING:Xst:647 - Input <address<31:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8192x13-bit single-port RAM <Mram_ram> for signal <ram>.
+    Found 13-bit register for signal <data_output>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  13 D-type flip-flop(s).
+Unit <internal_ram> synthesized.
+
+Synthesizing Unit <grakatest>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\grakatest.vhd".
+    Found 13-bit register for signal <value_out>.
+    Found 11-bit register for signal <HPOS>.
+    Found 11-bit register for signal <VPOS>.
+    Found 1-bit register for signal <take_data>.
+    Found 11-bit adder for signal <HPOS[10]_GND_18_o_add_4_OUT> created at line 62.
+    Found 11-bit adder for signal <VPOS[10]_GND_18_o_add_6_OUT> created at line 66.
+    Found 11-bit comparator greater for signal <GND_18_o_HPOS[10]_LessThan_1_o> created at line 55
+    Found 11-bit comparator greater for signal <HPOS[10]_GND_18_o_LessThan_2_o> created at line 55
+    Found 11-bit comparator greater for signal <HPOS[10]_PWR_13_o_LessThan_4_o> created at line 61
+    Found 11-bit comparator lessequal for signal <VPOS[10]_PWR_13_o_LessThan_6_o> created at line 65
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  36 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <grakatest> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8192x13-bit single-port RAM                           : 1
+# Multipliers                                          : 2
+ 12x11-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 8
+ 11-bit adder                                          : 3
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 2
+ 24-bit adder                                          : 2
+# Registers                                            : 20
+ 1-bit register                                        : 6
+ 11-bit register                                       : 4
+ 12-bit register                                       : 2
+ 13-bit register                                       : 4
+ 32-bit register                                       : 1
+ 8-bit register                                        : 3
+# Comparators                                          : 18
+ 11-bit comparator greater                             : 15
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 1
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
+INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
+INFO:Xst:2261 - The FF/Latch <green_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
+INFO:Xst:2261 - The FF/Latch <value_out_0> in Unit <XLXI_31> is equivalent to the following FF/Latch, which will be removed : <value_out_12> 
+INFO:Xst:2261 - The FF/Latch <value_out_2> in Unit <XLXI_31> is equivalent to the following FF/Latch, which will be removed : <value_out_10> 
+INFO:Xst:2261 - The FF/Latch <value_out_1> in Unit <XLXI_31> is equivalent to the following 8 FFs/Latches, which will be removed : <value_out_3> <value_out_4> <value_out_5> <value_out_6> <value_out_7> <value_out_8> <value_out_9> <value_out_11> 
+WARNING:Xst:1710 - FF/Latch <ram_data_output_1> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_3> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_4> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_5> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_6> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_7> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_8> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_9> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_data_output_11> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <value_out_1> (without init value) has a constant value of 0 in block <XLXI_31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <value_out_3> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_4> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_5> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_6> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_7> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_8> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_9> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_10> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_11> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <value_out_12> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_13> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_14> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_15> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_16> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_17> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_18> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_19> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_20> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_21> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_22> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_23> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_24> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_25> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_26> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_27> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_28> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_29> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_30> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <ram_address_31> of sequential type is unconnected in block <XLXI_29>.
+WARNING:Xst:2677 - Node <data_output_3> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_4> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_5> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_6> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_7> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_8> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_9> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_10> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_11> of sequential type is unconnected in block <XLXI_30>.
+WARNING:Xst:2677 - Node <data_output_12> of sequential type is unconnected in block <XLXI_30>.
+
+Synthesizing (advanced) Unit <Framebuffer>.
+	Multiplier <Mmult_vga_pixel_y[11]_PWR_11_o_MuLt_4_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0044[23:0]> in block <Framebuffer> are combined into a MAC<Maddsub_vga_pixel_y[11]_PWR_11_o_MuLt_4_OUT>.
+	The following registers are also absorbed by the MAC: <XLXI_27/pixel_x> in block <gesamt>.
+	Multiplier <Mmult_data_pixel_y[11]_PWR_11_o_MuLt_0_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0041[23:0]> in block <Framebuffer> are combined into a MAC<Maddsub_data_pixel_y[11]_PWR_11_o_MuLt_0_OUT>.
+Unit <Framebuffer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <VGA_Controller>.
+The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
+Unit <VGA_Controller> synthesized (advanced).
+
+Synthesizing (advanced) Unit <gesamt>.
+INFO:Xst:3226 - The RAM <XLXI_30/Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <XLXI_30/data_output>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8192-word x 13-bit                  |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <XLXN_65>       | rise     |
+    |     weA            | connected to signal <XLXN_63>       | high     |
+    |     addrA          | connected to signal <XLXN_78>       |          |
+    |     diA            | connected to signal <XLXN_62>       |          |
+    |     doA            | connected to signal <XLXN_66>       |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <gesamt> synthesized (advanced).
+
+Synthesizing (advanced) Unit <grakatest>.
+The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
+The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
+Unit <grakatest> synthesized (advanced).
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_13> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_14> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_15> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_16> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_17> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_18> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_19> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_20> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_21> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_22> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_23> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_24> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_25> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_26> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_27> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_28> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_29> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_30> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_address_31> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_3> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_4> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_5> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_6> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_7> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_8> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_9> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_10> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_11> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/value_out_12> of sequential type is unconnected in block <gesamt>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 8192x13-bit single-port block RAM                     : 1
+# MACs                                                 : 2
+ 12x11-to-24-bit MAC                                   : 2
+# Adders/Subtractors                                   : 3
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 2
+# Counters                                             : 3
+ 11-bit up counter                                     : 3
+# Registers                                            : 95
+ Flip-Flops                                            : 95
+# Comparators                                          : 18
+ 11-bit comparator greater                             : 15
+ 11-bit comparator lessequal                           : 2
+ 12-bit comparator lessequal                           : 1
+# Multiplexers                                         : 1
+ 32-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <value_out_1> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_3> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_4> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_5> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_6> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_7> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_8> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_9> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_11> (without init value) has a constant value of 0 in block <grakatest>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <value_out_0> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_12> 
+INFO:Xst:2261 - The FF/Latch <value_out_2> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_10> 
+INFO:Xst:2261 - The FF/Latch <XLXI_27/green_0> in Unit <gesamt> is equivalent to the following 7 FFs/Latches, which will be removed : <XLXI_27/green_1> <XLXI_27/green_2> <XLXI_27/green_3> <XLXI_27/green_4> <XLXI_27/green_5> <XLXI_27/green_6> <XLXI_27/green_7> 
+INFO:Xst:2261 - The FF/Latch <XLXI_27/red_0> in Unit <gesamt> is equivalent to the following 7 FFs/Latches, which will be removed : <XLXI_27/red_1> <XLXI_27/red_2> <XLXI_27/red_3> <XLXI_27/red_4> <XLXI_27/red_5> <XLXI_27/red_6> <XLXI_27/red_7> 
+INFO:Xst:2261 - The FF/Latch <XLXI_27/blue_0> in Unit <gesamt> is equivalent to the following 7 FFs/Latches, which will be removed : <XLXI_27/blue_1> <XLXI_27/blue_2> <XLXI_27/blue_3> <XLXI_27/blue_4> <XLXI_27/blue_5> <XLXI_27/blue_6> <XLXI_27/blue_7> 
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_4> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_5> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_6> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_7> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_8> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_9> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_10> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_11> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_12> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram3> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram4> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram5> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram6> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram7> of sequential type is unconnected in block <gesamt>.
+
+Optimizing unit <gesamt> ...
+
+Optimizing unit <grakatest> ...
+WARNING:Xst:1710 - FF/Latch <XLXI_29/ram_data_output_1> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_29/ram_data_output_3> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <XLXI_27/pixel_y_11> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:3203 - The FF/Latch <XLXI_31/value_out_2> in Unit <gesamt> is the opposite to the following FF/Latch, which will be removed : <XLXI_31/value_out_0> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block gesamt, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 72
+ Flip-Flops                                            : 72
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : gesamt.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 183
+#      BUF                         : 1
+#      GND                         : 1
+#      INV                         : 8
+#      LUT1                        : 30
+#      LUT2                        : 8
+#      LUT3                        : 23
+#      LUT4                        : 9
+#      LUT5                        : 14
+#      LUT6                        : 25
+#      MUXCY                       : 30
+#      VCC                         : 1
+#      XORCY                       : 33
+# FlipFlops/Latches                : 73
+#      FD                          : 5
+#      FDE                         : 15
+#      FDR                         : 16
+#      FDRE                        : 33
+#      FDS                         : 3
+#      ODDR2                       : 1
+# RAMS                             : 2
+#      RAMB16BWER                  : 2
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 28
+#      IBUFG                       : 1
+#      OBUF                        : 27
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# DSPs                             : 2
+#      DSP48A1                     : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx45fgg676-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              73  out of  54576     0%  
+ Number of Slice LUTs:                  117  out of  27288     0%  
+    Number used as Logic:               117  out of  27288     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    152
+   Number with an unused Flip Flop:      79  out of    152    51%  
+   Number with an unused LUT:            35  out of    152    23%  
+   Number of fully used LUT-FF pairs:    38  out of    152    25%  
+   Number of unique control sets:        10
+
+IO Utilization: 
+ Number of IOs:                          28
+ Number of bonded IOBs:                  28  out of    358     7%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of    116     1%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     58     3%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_in                             | DCM_SP:CLKFX           | 78    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 28.701ns (Maximum Frequency: 34.841MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 3.820ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_in'
+  Clock period: 28.701ns (frequency: 34.841MHz)
+  Total number of paths / destination ports: 1492 / 245
+-------------------------------------------------------------------------
+Delay:               6.378ns (Levels of Logic = 2)
+  Source:            XLXI_31/VPOS_10 (FF)
+  Destination:       XLXI_29/ram_address_0 (FF)
+  Source Clock:      clk_in rising 4.5X
+  Destination Clock: clk_in rising 4.5X
+
+  Data Path: XLXI_31/VPOS_10 to XLXI_29/ram_address_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q             3   0.447   0.650  XLXI_31/VPOS_10 (XLXI_31/VPOS_10)
+     DSP48A1:B10->P12      1   4.394   0.580  XLXI_29/Maddsub_data_pixel_y[11]_PWR_11_o_MuLt_0_OUT (XLXI_29/n0041[23:0]<12>)
+     LUT3:I2->O            1   0.205   0.000  XLXI_29/Mmux_GND_15_o_ram_address[31]_mux_6_OUT41 (XLXI_29/GND_15_o_ram_address[31]_mux_6_OUT<12>)
+     FDE:D                     0.102          XLXI_29/ram_address_12
+    ----------------------------------------
+    Total                      6.378ns (5.148ns logic, 1.230ns route)
+                                       (80.7% logic, 19.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
+  Total number of paths / destination ports: 26 / 26
+-------------------------------------------------------------------------
+Offset:              3.820ns (Levels of Logic = 1)
+  Source:            XLXI_27/blue_0 (FF)
+  Destination:       blue<7> (PAD)
+  Source Clock:      clk_in rising 4.5X
+
+  Data Path: XLXI_27/blue_0 to blue<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              8   0.447   0.802  XLXI_27/blue_0 (XLXI_27/blue_0)
+     OBUF:I->O                 2.571          blue_7_OBUF (blue<7>)
+    ----------------------------------------
+    Total                      3.820ns (3.018ns logic, 0.802ns route)
+                                       (79.0% logic, 21.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk_in
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_in         |    6.378|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.52 secs
+ 
 --> 
 
-Total memory usage is 172628 kilobytes
+Total memory usage is 208392 kilobytes
 
-Number of errors   :    5 (   0 filtered)
-Number of warnings :    0 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  108 (   0 filtered)
+Number of infos    :   13 (   0 filtered)
 

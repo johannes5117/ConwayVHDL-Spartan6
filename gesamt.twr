@@ -37,34 +37,34 @@ Clock clk_in to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-blue<0>     |        13.932(R)|      SLOW  |         8.115(R)|      FAST  |XLXN_55           |   0.000|
-blue<1>     |        13.942(R)|      SLOW  |         8.113(R)|      FAST  |XLXN_55           |   0.000|
-blue<2>     |        11.131(R)|      SLOW  |         6.345(R)|      FAST  |XLXN_55           |   0.000|
-blue<3>     |        10.040(R)|      SLOW  |         5.679(R)|      FAST  |XLXN_55           |   0.000|
-blue<4>     |        14.118(R)|      SLOW  |         8.222(R)|      FAST  |XLXN_55           |   0.000|
-blue<5>     |        11.069(R)|      SLOW  |         6.288(R)|      FAST  |XLXN_55           |   0.000|
-blue<6>     |        14.409(R)|      SLOW  |         8.443(R)|      FAST  |XLXN_55           |   0.000|
-blue<7>     |        14.043(R)|      SLOW  |         8.162(R)|      FAST  |XLXN_55           |   0.000|
-clk_monitor |         8.157(R)|      SLOW  |         4.407(R)|      FAST  |XLXN_55           |   0.000|
-            |         8.132(F)|      SLOW  |         4.341(F)|      FAST  |XLXN_55           |   0.000|
-green<0>    |        18.002(R)|      SLOW  |        10.865(R)|      FAST  |XLXN_55           |   0.000|
-green<1>    |        16.356(R)|      SLOW  |         9.701(R)|      FAST  |XLXN_55           |   0.000|
-green<2>    |        16.424(R)|      SLOW  |         9.777(R)|      FAST  |XLXN_55           |   0.000|
-green<3>    |        16.403(R)|      SLOW  |         9.753(R)|      FAST  |XLXN_55           |   0.000|
-green<4>    |         9.796(R)|      SLOW  |         5.496(R)|      FAST  |XLXN_55           |   0.000|
-green<5>    |        16.328(R)|      SLOW  |         9.693(R)|      FAST  |XLXN_55           |   0.000|
-green<6>    |         9.616(R)|      SLOW  |         5.398(R)|      FAST  |XLXN_55           |   0.000|
-green<7>    |        16.633(R)|      SLOW  |         9.972(R)|      FAST  |XLXN_55           |   0.000|
-red<0>      |        17.579(R)|      SLOW  |        10.558(R)|      FAST  |XLXN_55           |   0.000|
-red<1>      |        17.558(R)|      SLOW  |        10.534(R)|      FAST  |XLXN_55           |   0.000|
-red<2>      |        17.483(R)|      SLOW  |        10.474(R)|      FAST  |XLXN_55           |   0.000|
-red<3>      |        17.375(R)|      SLOW  |        10.425(R)|      FAST  |XLXN_55           |   0.000|
-red<4>      |        17.372(R)|      SLOW  |        10.427(R)|      FAST  |XLXN_55           |   0.000|
-red<5>      |        17.707(R)|      SLOW  |        10.672(R)|      FAST  |XLXN_55           |   0.000|
-red<6>      |        17.912(R)|      SLOW  |        10.807(R)|      FAST  |XLXN_55           |   0.000|
-red<7>      |        17.963(R)|      SLOW  |        10.831(R)|      FAST  |XLXN_55           |   0.000|
-sync_hor    |        13.589(R)|      SLOW  |         7.881(R)|      FAST  |XLXN_55           |   0.000|
-sync_vert   |        14.136(R)|      SLOW  |         8.266(R)|      FAST  |XLXN_55           |   0.000|
+blue<0>     |        11.373(R)|      SLOW  |         6.434(R)|      FAST  |XLXN_65           |   0.000|
+blue<1>     |        11.534(R)|      SLOW  |         6.531(R)|      FAST  |XLXN_65           |   0.000|
+blue<2>     |         9.963(R)|      SLOW  |         5.614(R)|      FAST  |XLXN_65           |   0.000|
+blue<3>     |        11.041(R)|      SLOW  |         6.267(R)|      FAST  |XLXN_65           |   0.000|
+blue<4>     |        10.901(R)|      SLOW  |         6.169(R)|      FAST  |XLXN_65           |   0.000|
+blue<5>     |        10.297(R)|      SLOW  |         5.872(R)|      FAST  |XLXN_65           |   0.000|
+blue<6>     |        11.611(R)|      SLOW  |         6.608(R)|      FAST  |XLXN_65           |   0.000|
+blue<7>     |        11.478(R)|      SLOW  |         6.475(R)|      FAST  |XLXN_65           |   0.000|
+clk_monitor |         8.157(R)|      SLOW  |         4.407(R)|      FAST  |XLXN_65           |   0.000|
+            |         8.132(F)|      SLOW  |         4.341(F)|      FAST  |XLXN_65           |   0.000|
+green<0>    |        12.744(R)|      SLOW  |         7.308(R)|      FAST  |XLXN_65           |   0.000|
+green<1>    |        11.485(R)|      SLOW  |         6.565(R)|      FAST  |XLXN_65           |   0.000|
+green<2>    |        11.354(R)|      SLOW  |         6.472(R)|      FAST  |XLXN_65           |   0.000|
+green<3>    |        11.389(R)|      SLOW  |         6.510(R)|      FAST  |XLXN_65           |   0.000|
+green<4>    |        11.008(R)|      SLOW  |         6.212(R)|      FAST  |XLXN_65           |   0.000|
+green<5>    |        11.132(R)|      SLOW  |         6.329(R)|      FAST  |XLXN_65           |   0.000|
+green<6>    |        11.008(R)|      SLOW  |         6.212(R)|      FAST  |XLXN_65           |   0.000|
+green<7>    |        10.540(R)|      SLOW  |         5.895(R)|      FAST  |XLXN_65           |   0.000|
+red<0>      |        12.995(R)|      SLOW  |         7.543(R)|      FAST  |XLXN_65           |   0.000|
+red<1>      |        12.890(R)|      SLOW  |         7.479(R)|      FAST  |XLXN_65           |   0.000|
+red<2>      |        12.601(R)|      SLOW  |         7.292(R)|      FAST  |XLXN_65           |   0.000|
+red<3>      |        12.622(R)|      SLOW  |         7.310(R)|      FAST  |XLXN_65           |   0.000|
+red<4>      |        12.810(R)|      SLOW  |         7.437(R)|      FAST  |XLXN_65           |   0.000|
+red<5>      |        12.225(R)|      SLOW  |         7.007(R)|      FAST  |XLXN_65           |   0.000|
+red<6>      |        12.124(R)|      SLOW  |         6.958(R)|      FAST  |XLXN_65           |   0.000|
+red<7>      |        12.108(R)|      SLOW  |         6.954(R)|      FAST  |XLXN_65           |   0.000|
+sync_hor    |        11.014(R)|      SLOW  |         6.226(R)|      FAST  |XLXN_65           |   0.000|
+sync_vert   |        11.128(R)|      SLOW  |         6.305(R)|      FAST  |XLXN_65           |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_in
@@ -72,18 +72,18 @@ Clock to Setup on destination clock clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_in         |   50.383|         |         |         |
+clk_in         |    7.442|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Mon Jul 10 00:01:56 2017 
+Analysis completed Tue Jul 11 01:58:05 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 277 MB
+Peak Memory Usage: 187 MB
 
 
 
