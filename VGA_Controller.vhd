@@ -35,7 +35,7 @@ entity VGA_Controller is
     Port ( clk_108 : in  STD_LOGIC;
            sync_hor : out  STD_LOGIC;
            sync_vert : out  STD_LOGIC;
-			  data_in: in STD_LOGIC_VECTOR(12 downto 0);
+			  data_in: in STD_LOGIC_VECTOR(7 downto 0);
 			  pixel_x: out STD_LOGIC_VECTOR(11 downto 0);
 			  pixel_y: out STD_LOGIC_VECTOR(11 downto 0);
 			  mutex: out STD_LOGIC;
@@ -48,23 +48,32 @@ ARCHITECTURE MAIN OF VGA_Controller IS
 SIGNAL RGB: STD_LOGIC_VECTOR(7 downto 0);
 SIGNAL HPOS: INTEGER RANGE 0 TO 1688:=0;
 SIGNAL VPOS: INTEGER RANGE 0 TO 1066:=0;
-Signal testInt: INTEGER Range 0 To 10000:=0;
-Signal inc: Integer Range 0 To 5119:=0;
+Signal HSCALE: Integer Range 0 to 80:=0;
+Signal VSCALE: INTEGER RANGE 0 TO 64:=0;
 signal signal_mutex: std_logic := '0';
 -- Create the FrameBuffer
 BEGIN
  PROCESS(clk_108)
  BEGIN
 IF(rising_edge(clk_108))THEN
-		if(HPOS+1>=408 and VPOS>=42) then
-			pixel_x <= std_logic_vector(to_unsigned(HPOS-408+1,pixel_x'length));
-			pixel_y <= std_logic_vector(to_unsigned(VPOS-42,pixel_y'length));
-		end if;
-
 	
+	if(HPOS>=408 and ((HPOS-408) mod 16) = 0 and VPOS >= 42) then
 		red<=(others=>data_in(0));
 		green<=(others=>data_in(1));
 		blue<=(others=>data_in(2));
+		
+		IF(HSCALE<80)THEN
+			pixel_x <= std_logic_vector(to_unsigned(HSCALE,pixel_x'length));
+			pixel_y <= std_logic_vector(to_unsigned(VSCALE,pixel_y'length));
+			HSCALE<=HSCALE+1;
+		else
+			pixel_x <= std_logic_vector(to_unsigned(HSCALE,pixel_x'length));
+			pixel_y <= std_logic_vector(to_unsigned(VSCALE,pixel_y'length));	
+		end if;
+	end if;
+
+	
+	
 	
 	
 	IF(HPOS<1688)THEN
@@ -73,6 +82,11 @@ IF(rising_edge(clk_108))THEN
 		HPOS<=0;
 		IF(VPOS<1066)THEN
 			VPOS<=VPOS+1;
+			if(VPOS>42 and ((VPOS-42) mod 16) = 0)  then
+				IF(VSCALE<63)THEN
+					VSCALE<=VSCALE+1;	
+				end if;
+			end if;
 		ELSE
 			VPOS<=0; 
 		END IF;
@@ -89,16 +103,16 @@ IF(rising_edge(clk_108))THEN
 	END IF;
    IF(HPOS>48 AND HPOS<160)THEN----HSYNC
 	   sync_hor<='0';
+		HSCALE <= 2;
+		pixel_x <= std_logic_vector(to_unsigned(1,pixel_x'length));
+		pixel_y <= std_logic_vector(to_unsigned(VSCALE,pixel_y'length));
 	ELSE
 	   sync_hor<='1';
 	END IF;
    IF(VPOS>0 AND VPOS<4)THEN----------vsync
+		VSCALE <= 0;
+		pixel_y <= std_logic_vector(to_unsigned(0,pixel_y'length));
 	   sync_vert<='0';
-		testInt <= testInt +1;
-		if(testInt = 0) then 
-			--test(inc) <= '0';
-			inc <= inc +1;
-		end if;
 	ELSE
 	   sync_vert<='1';
 	END IF;

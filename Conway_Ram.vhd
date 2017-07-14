@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    00:42:46 07/10/2017 
+-- Create Date:    17:46:35 07/14/2017 
 -- Design Name: 
--- Module Name:    internal_ram - Behavioral 
+-- Module Name:    Conway_Ram - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -19,7 +19,6 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.numeric_std.All;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -30,18 +29,17 @@ use IEEE.numeric_std.All;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity internal_ram is
+entity Conway_Ram is
     Port ( clk : in  STD_LOGIC;
-           address : in  std_logic_vector(31 downto 0);
+           address : in  Integer;
            we : in  STD_LOGIC;
-           data_input : in  STD_LOGIC_VECTOR (7 downto 0);
-           data_output : out  STD_LOGIC_VECTOR (7 downto 0));
-end internal_ram;
+           data_input : in  STD_LOGIC;
+           data_output : out  STD_LOGIC);
+end Conway_Ram;
 
-architecture Behavioral of internal_ram is
-
-type ram_t is array (0 to 5120) of std_logic_vector(7 downto 0);
-signal ram : ram_t := (others => (others => '1'));
+architecture Behavioral of Conway_Ram is
+type ram_t is array (0 to 5120) of std_logic;
+signal ram : ram_t := (others => ('0'));
 --attribute ram_style: string;
 --attribute ram_style of ram : signal is "auto";
 
@@ -56,6 +54,8 @@ BEGIN
         data_output <= ram(to_integer(unsigned(address)));
     end if; 
 END PROCESS;
+
+
 
 end Behavioral;
 
