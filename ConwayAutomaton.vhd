@@ -33,9 +33,9 @@ entity ConwayAutomaton is
     Port ( clk : in  STD_LOGIC;
            ram_data_out : out  STD_LOGIC;
            ram_data_in : in  STD_LOGIC;
-           ram_addr_x : out  STD_LOGIC_VECTOR (11 downto 0);
-           ram_addr_y : out  STD_LOGIC_VECTOR (11 downto 0);
-			  initModule_init : in STD_LOGIC;
+			  ram_addr: out integer;
+			  ram_we: out STD_LOGIC;
+				initModule_init : in STD_LOGIC;
            iterationWriter_start : out  STD_LOGIC;
            iterationWriter_finished : in  STD_LOGIC);
 end ConwayAutomaton;

@@ -106,7 +106,7 @@ BEGIN
 			else
 				take_data <= '0';
 		end if;
-							end if;
+	end if;
 
 	
 	

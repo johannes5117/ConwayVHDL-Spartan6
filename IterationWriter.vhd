@@ -35,11 +35,11 @@ entity IterationWriter is
            engine_read_start : in  STD_LOGIC;
            ram_data_in : in  STD_LOGIC;
            framebuffer_data_out : out  STD_LOGIC_VECTOR (7 downto 0);
-           ram_addr_x : out  STD_LOGIC_VECTOR (11 downto 0);
-           ram_addr_y : out  STD_LOGIC_VECTOR (11 downto 0);
+           ram_addr: out integer;
            framebuffer_addr_x : out  STD_LOGIC_VECTOR (11 downto 0);
            framebuffer_addr_y : out  STD_LOGIC_VECTOR (11 downto 0);
-           framebuffer_mutex : in  STD_LOGIC);
+			  framebuffer_take_data : out STD_LOGIC;
+           framebuffer_writeable : in  STD_LOGIC);
 end IterationWriter;
 
 architecture Behavioral of IterationWriter is
