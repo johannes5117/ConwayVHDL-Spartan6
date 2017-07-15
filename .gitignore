@@ -32,3 +32,4 @@ sch2HdlBatchFile
 ddr2Ram.sym
 *.xmsgs
 gesamt.ngr
+gesamt.schlog
