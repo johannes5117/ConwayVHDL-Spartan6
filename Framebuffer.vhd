@@ -49,6 +49,7 @@ entity Framebuffer is
 end Framebuffer;
 
 architecture Behavioral of Framebuffer is
+signal take_data_pre : std_logic:='0';
 
 begin
 
@@ -57,7 +58,7 @@ BEGIN
     if(rising_edge(clk)) then
         if(vga_mutex='0') then
 				writeable<='1';
-				if(take_data = '1') then
+				if(take_data = '1' and take_data_pre = '0') then
 					ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(data_pixel_y))*80 + to_integer(unsigned(data_pixel_x)), ram_address'length));
 					--std_logic_vector(to_unsigned(((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x)) mod 1280)/16)+((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x))/(1280*16))*80), ram_address'length));
 					ram_we <= '1';
@@ -74,6 +75,7 @@ BEGIN
 				--std_logic_vector(to_unsigned(((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x)) mod 1280)/16)+((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x))/(1280*16))*80), ram_address'length));
 				value_out <= ram_data_input;
 		  end if;
+		  take_data_pre <= take_data;
     end if; 
 END PROCESS;
 end Behavioral;

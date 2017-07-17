@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.11 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> Reading design: gesamt.prj
 
@@ -108,19 +108,30 @@ Slice Utilization Ratio Delta      : 5
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\VGA_Controller.vhd" into library work
 Parsing entity <VGA_Controller>.
 Parsing architecture <MAIN> of entity <vga_controller>.
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\MuxAddr32.vhd" into library work
+Parsing entity <MuxAddr32>.
+Parsing architecture <Behavioral> of entity <muxaddr32>.
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\IterationWriter.vhd" into library work
+Parsing entity <IterationWriter>.
+Parsing architecture <Behavioral> of entity <iterationwriter>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\ipcore_dir\clk_wiz_v3_6.vhd" into library work
 Parsing entity <clk_wiz_v3_6>.
 Parsing architecture <xilinx> of entity <clk_wiz_v3_6>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\internal_ram.vhd" into library work
 Parsing entity <internal_ram>.
 Parsing architecture <Behavioral> of entity <internal_ram>.
-Parsing VHDL file "C:\AdvancedEmbedded\EndProj\grakatest.vhd" into library work
-Parsing entity <grakatest>.
-Parsing architecture <Behavioral> of entity <grakatest>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\Framebuffer.vhd" into library work
 Parsing entity <Framebuffer>.
 Parsing architecture <Behavioral> of entity <framebuffer>.
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\Conway_Ram.vhd" into library work
+Parsing entity <Conway_Ram>.
+Parsing architecture <Behavioral> of entity <conway_ram>.
+Parsing VHDL file "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" into library work
+Parsing entity <ConwayInitializer>.
+Parsing architecture <Behavioral> of entity <conwayinitializer>.
 Parsing VHDL file "C:\AdvancedEmbedded\EndProj\gesamt.vhf" into library work
+Parsing entity <M2_1_HXILINX_gesamt>.
+Parsing architecture <M2_1_HXILINX_gesamt_V> of entity <m2_1_hxilinx_gesamt>.
 Parsing entity <gesamt>.
 Parsing architecture <BEHAVIORAL> of entity <gesamt>.
 
@@ -138,7 +149,22 @@ Elaborating entity <Framebuffer> (architecture <Behavioral>) from library <work>
 
 Elaborating entity <internal_ram> (architecture <Behavioral>) from library <work>.
 
-Elaborating entity <grakatest> (architecture <Behavioral>) from library <work>.
+Elaborating entity <IterationWriter> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Conway_Ram> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <MuxAddr32> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <M2_1_HXILINX_gesamt> (architecture <M2_1_HXILINX_gesamt_V>) from library <work>.
+INFO:HDLCompiler:679 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" Line 44. Case statement is complete. others clause is never selected
+
+Elaborating entity <ConwayInitializer> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 50: signal_init_running should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 77: vpos should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 78: signal_data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 79: signal_init_running should be on the sensitivity list of the process
+WARNING:HDLCompiler:634 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" Line 83: Net <XLXN_189> does not have a driver.
+WARNING:HDLCompiler:634 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" Line 100: Net <XLXI_49_addrConway_openSignal[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -149,6 +175,10 @@ Synthesizing Unit <gesamt>.
     Set property "INIT = 0" for instance <XLXI_17>.
     Set property "SRTYPE = SYNC" for instance <XLXI_17>.
     Set property "DDR_ALIGNMENT = NONE" for instance <XLXI_17>.
+    Set property "HU_SET = XLXI_50_0" for instance <XLXI_50>.
+INFO:Xst:3210 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" line 296: Output port <engine_write_finished> of the instance <XLXI_46> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <XLXI_49_addrConway_openSignal> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+WARNING:Xst:653 - Signal <XLXN_189> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
 Unit <gesamt> synthesized.
@@ -208,15 +238,16 @@ Synthesizing Unit <Framebuffer>.
     Found 1-bit register for signal <ram_we>.
     Found 8-bit register for signal <ram_data_output>.
     Found 8-bit register for signal <value_out>.
+    Found 1-bit register for signal <take_data_pre>.
     Found 1-bit register for signal <writeable>.
-    Found 20-bit adder for signal <n0041[19:0]> created at line 61.
-    Found 20-bit adder for signal <n0044[19:0]> created at line 71.
-    Found 12x7-bit multiplier for signal <data_pixel_y[11]_PWR_12_o_MuLt_0_OUT> created at line 61.
-    Found 12x7-bit multiplier for signal <vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT> created at line 71.
+    Found 20-bit adder for signal <n0044[19:0]> created at line 62.
+    Found 20-bit adder for signal <n0047[19:0]> created at line 72.
+    Found 12x7-bit multiplier for signal <data_pixel_y[11]_PWR_12_o_MuLt_0_OUT> created at line 62.
+    Found 12x7-bit multiplier for signal <vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT> created at line 72.
     Summary:
 	inferred   2 Multiplier(s).
 	inferred   2 Adder/Subtractor(s).
-	inferred  50 D-type flip-flop(s).
+	inferred  51 D-type flip-flop(s).
 	inferred   1 Multiplexer(s).
 Unit <Framebuffer> synthesized.
 
@@ -231,53 +262,114 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram>, s
 	inferred   8 D-type flip-flop(s).
 Unit <internal_ram> synthesized.
 
-Synthesizing Unit <grakatest>.
-    Related source file is "C:\AdvancedEmbedded\EndProj\grakatest.vhd".
-    Found 7-bit register for signal <VPOS>.
-    Found 1-bit register for signal <take_data>.
-    Found 8-bit register for signal <value_out_signal>.
-    Found 12-bit register for signal <data_pixel_x>.
-    Found 12-bit register for signal <data_pixel_y>.
-    Found 8-bit register for signal <value_out>.
+Synthesizing Unit <IterationWriter>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\IterationWriter.vhd".
+WARNING:Xst:647 - Input <engine_read_start> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:653 - Signal <engine_write_finished> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <divider>.
+    Found 1-bit register for signal <signal_take_data>.
     Found 7-bit register for signal <HPOS>.
-    Found 7-bit adder for signal <HPOS[6]_GND_19_o_add_1_OUT> created at line 59.
-    Found 7-bit adder for signal <VPOS[6]_GND_19_o_add_3_OUT> created at line 63.
-    Found 7-bit comparator greater for signal <HPOS[6]_PWR_14_o_LessThan_1_o> created at line 58
-    Found 7-bit comparator lessequal for signal <VPOS[6]_GND_19_o_LessThan_3_o> created at line 62
+    Found 7-bit register for signal <VPOS>.
+    Found 8-bit register for signal <value_out_signal>.
+    Found 8-bit register for signal <framebuffer_data_out>.
+    Found 12-bit register for signal <framebuffer_addr_x>.
+    Found 12-bit register for signal <framebuffer_addr_y>.
+    Found 1-bit register for signal <framebuffer_take_data>.
+    Found 1-bit register for signal <signal_framebuffer_writeable_pre>.
+    Found 32-bit register for signal <ram_addr>.
+    Found 7-bit adder for signal <HPOS[6]_GND_19_o_add_3_OUT> created at line 69.
+    Found 7-bit adder for signal <VPOS[6]_GND_19_o_add_5_OUT> created at line 73.
+    Found 15-bit adder for signal <n0116[14:0]> created at line 79.
+    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_14_o_MuLt_9_OUT> created at line 79.
+    Found 7-bit comparator greater for signal <HPOS[6]_PWR_14_o_LessThan_3_o> created at line 68
+    Found 7-bit comparator lessequal for signal <VPOS[6]_GND_19_o_LessThan_5_o> created at line 72
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred  55 D-type flip-flop(s).
+	inferred   1 Multiplier(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  90 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred   5 Multiplexer(s).
-Unit <grakatest> synthesized.
+	inferred   2 Multiplexer(s).
+Unit <IterationWriter> synthesized.
+
+Synthesizing Unit <Conway_Ram>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\Conway_Ram.vhd".
+WARNING:Xst:647 - Input <address<31:13>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <ram>, simulation mismatch.
+    Found 5121x1-bit single-port RAM <Mram_ram> for signal <ram>.
+    Found 1-bit register for signal <data_output>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred   1 D-type flip-flop(s).
+Unit <Conway_Ram> synthesized.
+
+Synthesizing Unit <MuxAddr32>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\MuxAddr32.vhd".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <MuxAddr32> synthesized.
+
+Synthesizing Unit <M2_1_HXILINX_gesamt>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\gesamt.vhf".
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <M2_1_HXILINX_gesamt> synthesized.
+
+Synthesizing Unit <ConwayInitializer>.
+    Related source file is "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd".
+    Found 7-bit register for signal <VPOS>.
+    Found 1-bit register for signal <signal_init_running>.
+    Found 1-bit register for signal <signal_data>.
+    Found 8-bit register for signal <HPOS>.
+    Found 8-bit adder for signal <HPOS[7]_GND_56_o_add_1_OUT> created at line 52.
+    Found 7-bit adder for signal <VPOS[6]_GND_56_o_add_3_OUT> created at line 56.
+    Found 16-bit adder for signal <n0061> created at line 77.
+    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_18_o_MuLt_19_OUT> created at line 77.
+    Found 8-bit comparator greater for signal <GND_56_o_HPOS[7]_LessThan_1_o> created at line 51
+    Found 7-bit comparator lessequal for signal <VPOS[6]_GND_56_o_LessThan_3_o> created at line 55
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   3 Adder/Subtractor(s).
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <ConwayInitializer> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
+ 5121x1-bit single-port RAM                            : 1
  5121x8-bit single-port RAM                            : 1
-# Multipliers                                          : 2
+# Multipliers                                          : 4
  12x7-bit multiplier                                   : 2
-# Adders/Subtractors                                   : 10
+ 7x7-bit multiplier                                    : 2
+# Adders/Subtractors                                   : 14
  11-bit adder                                          : 2
+ 15-bit adder                                          : 1
+ 16-bit adder                                          : 1
  20-bit adder                                          : 2
  4-bit subtractor                                      : 2
- 7-bit adder                                           : 4
-# Registers                                            : 25
- 1-bit register                                        : 6
+ 7-bit adder                                           : 5
+ 8-bit adder                                           : 1
+# Registers                                            : 35
+ 1-bit register                                        : 13
  11-bit register                                       : 2
  12-bit register                                       : 4
- 32-bit register                                       : 1
- 7-bit register                                        : 4
- 8-bit register                                        : 8
-# Comparators                                          : 18
+ 32-bit register                                       : 2
+ 7-bit register                                        : 5
+ 8-bit register                                        : 9
+# Comparators                                          : 20
  11-bit comparator greater                             : 14
  7-bit comparator greater                              : 1
- 7-bit comparator lessequal                            : 3
-# Multiplexers                                         : 6
- 32-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 5
+ 7-bit comparator lessequal                            : 4
+ 8-bit comparator greater                              : 1
+# Multiplexers                                         : 7
+ 1-bit 2-to-1 multiplexer                              : 3
+ 32-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -290,10 +382,12 @@ INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <XLXI_27> is equivalent to the fol
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
 INFO:Xst:2261 - The FF/Latch <pixel_x_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_x_8> <pixel_x_9> <pixel_x_10> <pixel_x_11> 
-INFO:Xst:2261 - The FF/Latch <data_pixel_x_7> in Unit <XLXI_31> is equivalent to the following 9 FFs/Latches, which will be removed : <data_pixel_x_8> <data_pixel_x_9> <data_pixel_x_10> <data_pixel_x_11> <data_pixel_y_7> <data_pixel_y_8> <data_pixel_y_9> <data_pixel_y_10> <data_pixel_y_11> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_addr_x_7> in Unit <XLXI_46> is equivalent to the following 9 FFs/Latches, which will be removed : <framebuffer_addr_x_8> <framebuffer_addr_x_9> <framebuffer_addr_x_10> <framebuffer_addr_x_11> <framebuffer_addr_y_7> <framebuffer_addr_y_8> <framebuffer_addr_y_9> <framebuffer_addr_y_10> <framebuffer_addr_y_11> 
+INFO:Xst:2261 - The FF/Latch <ram_addr_15> in Unit <XLXI_46> is equivalent to the following 16 FFs/Latches, which will be removed : <ram_addr_16> <ram_addr_17> <ram_addr_18> <ram_addr_19> <ram_addr_20> <ram_addr_21> <ram_addr_22> <ram_addr_23> <ram_addr_24> <ram_addr_25> <ram_addr_26> <ram_addr_27> <ram_addr_28> <ram_addr_29> <ram_addr_30> <ram_addr_31> 
 WARNING:Xst:1710 - FF/Latch <pixel_y_7> (without init value) has a constant value of 0 in block <XLXI_27>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <pixel_x_7> (without init value) has a constant value of 0 in block <XLXI_27>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <data_pixel_x_7> (without init value) has a constant value of 0 in block <XLXI_31>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <framebuffer_addr_x_7> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <ram_addr_15> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <value_out_3> of sequential type is unconnected in block <XLXI_29>.
 WARNING:Xst:2677 - Node <value_out_4> of sequential type is unconnected in block <XLXI_29>.
 WARNING:Xst:2677 - Node <value_out_5> of sequential type is unconnected in block <XLXI_29>.
@@ -324,13 +418,45 @@ WARNING:Xst:2677 - Node <data_output_5> of sequential type is unconnected in blo
 WARNING:Xst:2677 - Node <data_output_6> of sequential type is unconnected in block <XLXI_30>.
 WARNING:Xst:2677 - Node <data_output_7> of sequential type is unconnected in block <XLXI_30>.
 WARNING:Xst:2404 -  FFs/Latches <pixel_y<11:7>> (without init value) have a constant value of 0 in block <VGA_Controller>.
-WARNING:Xst:2404 -  FFs/Latches <data_pixel_x<11:7>> (without init value) have a constant value of 0 in block <grakatest>.
-WARNING:Xst:2404 -  FFs/Latches <data_pixel_y<11:7>> (without init value) have a constant value of 0 in block <grakatest>.
+WARNING:Xst:2404 -  FFs/Latches <ram_addr<31:15>> (without init value) have a constant value of 0 in block <IterationWriter>.
+WARNING:Xst:2404 -  FFs/Latches <framebuffer_addr_x<11:7>> (without init value) have a constant value of 0 in block <IterationWriter>.
+WARNING:Xst:2404 -  FFs/Latches <framebuffer_addr_y<11:7>> (without init value) have a constant value of 0 in block <IterationWriter>.
+
+Synthesizing (advanced) Unit <ConwayInitializer>.
+The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
+The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
+	Multiplier <Mmult_VPOS[6]_PWR_18_o_MuLt_19_OUT> in block <ConwayInitializer> and adder/subtractor <Madd_n0061> in block <ConwayInitializer> are combined into a MAC<Maddsub_VPOS[6]_PWR_18_o_MuLt_19_OUT>.
+Unit <ConwayInitializer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <Conway_Ram>.
+INFO:Xst:3226 - The RAM <Mram_ram> will be implemented as a BLOCK RAM, absorbing the following register(s): <data_output>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 5121-word x 1-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <address>       |          |
+    |     diA            | connected to signal <data_input>    |          |
+    |     doA            | connected to signal <data_output>   |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <Conway_Ram> synthesized (advanced).
 
 Synthesizing (advanced) Unit <Framebuffer>.
-	Multiplier <Mmult_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0044[19:0]> in block <Framebuffer> are combined into a MAC<Maddsub_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT>.
-	Multiplier <Mmult_data_pixel_y[11]_PWR_12_o_MuLt_0_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0041[19:0]> in block <Framebuffer> are combined into a MAC<Maddsub_data_pixel_y[11]_PWR_12_o_MuLt_0_OUT>.
+	Multiplier <Mmult_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0047[19:0]> in block <Framebuffer> are combined into a MAC<Maddsub_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT>.
+	Multiplier <Mmult_data_pixel_y[11]_PWR_12_o_MuLt_0_OUT> in block <Framebuffer> and adder/subtractor <Madd_n0044[19:0]> in block <Framebuffer> are combined into a MAC<Maddsub_data_pixel_y[11]_PWR_12_o_MuLt_0_OUT>.
 Unit <Framebuffer> synthesized (advanced).
+
+Synthesizing (advanced) Unit <IterationWriter>.
+The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
+The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
+	Multiplier <Mmult_VPOS[6]_PWR_14_o_MuLt_9_OUT> in block <IterationWriter> and adder/subtractor <Madd_n0116[14:0]> in block <IterationWriter> are combined into a MAC<Maddsub_VPOS[6]_PWR_14_o_MuLt_9_OUT>.
+	The following registers are also absorbed by the MAC: <ram_addr> in block <IterationWriter>.
+Unit <IterationWriter> synthesized (advanced).
 
 Synthesizing (advanced) Unit <VGA_Controller>.
 The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
@@ -347,7 +473,7 @@ INFO:Xst:3226 - The RAM <XLXI_30/Mram_ram> will be implemented as a BLOCK RAM, a
     | Port A                                                              |
     |     aspect ratio   | 5121-word x 8-bit                   |          |
     |     mode           | read-first                          |          |
-    |     clkA           | connected to signal <XLXN_65>       | rise     |
+    |     clkA           | connected to signal <XLXN_209>      | rise     |
     |     weA            | connected to signal <XLXN_63>       | high     |
     |     addrA          | connected to signal <XLXN_78>       |          |
     |     diA            | connected to signal <XLXN_94>       |          |
@@ -356,11 +482,6 @@ INFO:Xst:3226 - The RAM <XLXI_30/Mram_ram> will be implemented as a BLOCK RAM, a
     | optimization       | speed                               |          |
     -----------------------------------------------------------------------
 Unit <gesamt> synthesized (advanced).
-
-Synthesizing (advanced) Unit <grakatest>.
-The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
-The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
-Unit <grakatest> synthesized (advanced).
 WARNING:Xst:2677 - Node <XLXI_29/ram_address_13> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_address_14> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_address_15> of sequential type is unconnected in block <gesamt>.
@@ -385,24 +506,32 @@ WARNING:Xst:2677 - Node <XLXI_29/ram_address_31> of sequential type is unconnect
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
+ 5121x1-bit single-port block RAM                      : 1
  5121x8-bit single-port block RAM                      : 1
-# MACs                                                 : 2
+# MACs                                                 : 4
  12x7-to-20-bit MAC                                    : 2
+ 7x7-to-15-bit MAC                                     : 1
+ 7x7-to-16-bit MAC                                     : 1
 # Adders/Subtractors                                   : 2
  4-bit subtractor                                      : 2
-# Counters                                             : 6
+# Counters                                             : 8
  11-bit up counter                                     : 2
- 7-bit up counter                                      : 4
-# Registers                                            : 108
- Flip-Flops                                            : 108
-# Comparators                                          : 18
+ 7-bit up counter                                      : 5
+ 8-bit up counter                                      : 1
+# Registers                                            : 114
+ Flip-Flops                                            : 114
+# Comparators                                          : 20
  11-bit comparator greater                             : 14
  7-bit comparator greater                              : 1
- 7-bit comparator lessequal                            : 3
+ 7-bit comparator lessequal                            : 4
+ 8-bit comparator greater                              : 1
 # Multiplexers                                         : 6
- 32-bit 2-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 5
+ 1-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 2
+ 8-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -417,20 +546,24 @@ WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <pixel_x_11> (withou
 INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_5> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_3> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_4> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_1> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_6> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_0> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_7> 
-INFO:Xst:2261 - The FF/Latch <value_out_0> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_7> 
-INFO:Xst:2261 - The FF/Latch <value_out_1> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_6> 
-INFO:Xst:2261 - The FF/Latch <value_out_2> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_5> 
-INFO:Xst:2261 - The FF/Latch <value_out_3> in Unit <grakatest> is equivalent to the following FF/Latch, which will be removed : <value_out_4> 
+INFO:Xst:2261 - The FF/Latch <value_out_signal_0> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_7> 
+INFO:Xst:2261 - The FF/Latch <value_out_signal_1> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_6> 
+INFO:Xst:2261 - The FF/Latch <value_out_signal_3> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_4> 
+INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_5> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_0> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_7> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_1> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_6> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_2> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_5> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_3> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_4> 
 
 Optimizing unit <gesamt> ...
 
 Optimizing unit <VGA_Controller> ...
 
-Optimizing unit <grakatest> ...
+Optimizing unit <IterationWriter> ...
+
+Optimizing unit <ConwayInitializer> ...
+
+Optimizing unit <M2_1_HXILINX_gesamt> ...
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_4> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_5> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_6> of sequential type is unconnected in block <gesamt>.
@@ -440,12 +573,13 @@ WARNING:Xst:2677 - Node <XLXI_29/value_out_4> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <XLXI_29/value_out_5> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/value_out_6> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/value_out_7> of sequential type is unconnected in block <gesamt>.
-WARNING:Xst:2677 - Node <XLXI_30/Mram_ram4> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_30/Mram_ram3> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_30/Mram_ram4> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:1293 - FF/Latch <XLXI_27/VSCALE_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <XLXI_31/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_46/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <XLXI_51/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_27/pixel_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_31/data_pixel_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_46/framebuffer_addr_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -457,8 +591,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 92
- Flip-Flops                                            : 92
+# Registers                                            : 112
+ Flip-Flops                                            : 112
 
 =========================================================================
 
@@ -481,28 +615,29 @@ Top Level Output File Name         : gesamt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 178
+# BELS                             : 230
 #      BUF                         : 1
 #      GND                         : 1
-#      INV                         : 7
-#      LUT1                        : 20
-#      LUT2                        : 12
-#      LUT3                        : 23
-#      LUT4                        : 15
-#      LUT5                        : 17
-#      LUT6                        : 39
-#      MUXCY                       : 20
+#      INV                         : 9
+#      LUT1                        : 27
+#      LUT2                        : 8
+#      LUT3                        : 43
+#      LUT4                        : 18
+#      LUT5                        : 22
+#      LUT6                        : 43
+#      MUXCY                       : 27
 #      VCC                         : 1
-#      XORCY                       : 22
-# FlipFlops/Latches                : 93
-#      FD                          : 5
-#      FDE                         : 24
-#      FDR                         : 17
-#      FDRE                        : 45
-#      FDSE                        : 1
+#      XORCY                       : 30
+# FlipFlops/Latches                : 113
+#      FD                          : 11
+#      FDE                         : 32
+#      FDR                         : 13
+#      FDRE                        : 51
+#      FDSE                        : 5
 #      ODDR2                       : 1
-# RAMS                             : 2
+# RAMS                             : 3
 #      RAMB16BWER                  : 2
+#      RAMB8BWER                   : 1
 # Clock Buffers                    : 1
 #      BUFG                        : 1
 # IO Buffers                       : 28
@@ -510,8 +645,8 @@ Primitive and Black Box Usage:
 #      OBUF                        : 27
 # DCMs                             : 1
 #      DCM_SP                      : 1
-# DSPs                             : 2
-#      DSP48A1                     : 2
+# DSPs                             : 4
+#      DSP48A1                     : 4
 
 Device utilization summary:
 ---------------------------
@@ -520,26 +655,26 @@ Selected Device : 6slx45fgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              93  out of  54576     0%  
- Number of Slice LUTs:                  133  out of  27288     0%  
-    Number used as Logic:               133  out of  27288     0%  
+ Number of Slice Registers:             113  out of  54576     0%  
+ Number of Slice LUTs:                  170  out of  27288     0%  
+    Number used as Logic:               170  out of  27288     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    180
-   Number with an unused Flip Flop:      87  out of    180    48%  
-   Number with an unused LUT:            47  out of    180    26%  
-   Number of fully used LUT-FF pairs:    46  out of    180    25%  
-   Number of unique control sets:        15
+ Number of LUT Flip Flop pairs used:    223
+   Number with an unused Flip Flop:     110  out of    223    49%  
+   Number with an unused LUT:            53  out of    223    23%  
+   Number of fully used LUT-FF pairs:    60  out of    223    26%  
+   Number of unique control sets:        17
 
 IO Utilization: 
  Number of IOs:                          28
  Number of bonded IOBs:                  28  out of    358     7%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                2  out of    116     1%  
-    Number using Block RAM only:          2
+ Number of Block RAM/FIFO:                3  out of    116     2%  
+    Number using Block RAM only:          3
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
- Number of DSP48A1s:                      2  out of     58     3%  
+ Number of DSP48A1s:                      4  out of     58     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -562,7 +697,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_in                             | DCM_SP:CLKFX           | 98    |
+clk_in                             | DCM_SP:CLKFX           | 121   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -573,7 +708,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 34.330ns (Maximum Frequency: 29.129MHz)
+   Minimum period: 38.051ns (Maximum Frequency: 26.281MHz)
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: 3.820ns
    Maximum combinational path delay: No path found
@@ -584,25 +719,25 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_in'
-  Clock period: 34.330ns (frequency: 29.129MHz)
-  Total number of paths / destination ports: 2571 / 285
+  Clock period: 38.051ns (frequency: 26.281MHz)
+  Total number of paths / destination ports: 3122 / 371
 -------------------------------------------------------------------------
-Delay:               7.629ns (Levels of Logic = 1)
-  Source:            XLXI_29/Maddsub_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT (DSP)
-  Destination:       XLXI_29/ram_address_0 (FF)
+Delay:               8.456ns (Levels of Logic = 1)
+  Source:            XLXI_51/Maddsub_VPOS[6]_PWR_18_o_MuLt_19_OUT (DSP)
+  Destination:       XLXI_47/Mram_ram (RAM)
   Source Clock:      clk_in rising 4.5X
   Destination Clock: clk_in rising 4.5X
 
-  Data Path: XLXI_29/Maddsub_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT to XLXI_29/ram_address_0
+  Data Path: XLXI_51/Maddsub_VPOS[6]_PWR_18_o_MuLt_19_OUT to XLXI_47/Mram_ram
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P0       1   6.742   0.580  XLXI_29/Maddsub_vga_pixel_y[11]_PWR_12_o_MuLt_4_OUT (XLXI_29/n0044[19:0]<0>)
-     LUT3:I2->O            1   0.205   0.000  XLXI_29/Mmux_GND_16_o_ram_address[31]_mux_6_OUT11 (XLXI_29/GND_16_o_ram_address[31]_mux_6_OUT<0>)
-     FDE:D                     0.102          XLXI_29/ram_address_0
+     DSP48A1:CLK->P12      1   6.742   0.580  XLXI_51/Maddsub_VPOS[6]_PWR_18_o_MuLt_19_OUT (XLXN_220<12>)
+     LUT3:I2->O            1   0.205   0.579  XLXI_49/Mmux_addrRam41 (XLXN_213<12>)
+     RAMB8BWER:ADDRAWRADDR12        0.350          XLXI_47/Mram_ram
     ----------------------------------------
-    Total                      7.629ns (7.049ns logic, 0.580ns route)
-                                       (92.4% logic, 7.6% route)
+    Total                      8.456ns (7.297ns logic, 1.159ns route)
+                                       (86.3% logic, 13.7% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
@@ -633,20 +768,20 @@ Clock to Setup on destination clock clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_in         |    7.629|         |         |         |
+clk_in         |    8.456|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.74 secs
+Total CPU time to Xst completion: 6.43 secs
  
 --> 
 
-Total memory usage is 207560 kilobytes
+Total memory usage is 210888 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   77 (   0 filtered)
-Number of infos    :   18 (   0 filtered)
+Number of warnings :   92 (   0 filtered)
+Number of infos    :   21 (   0 filtered)
 

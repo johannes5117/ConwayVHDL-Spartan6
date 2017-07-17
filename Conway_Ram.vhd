@@ -33,7 +33,7 @@ use IEEE.numeric_std.All;
 
 entity Conway_Ram is
     Port ( clk : in  STD_LOGIC;
-           address : in  Integer;
+           address : in  std_logic_vector(31 downto 0);
            we : in  STD_LOGIC;
            data_input : in  STD_LOGIC;
            data_output : out  STD_LOGIC);

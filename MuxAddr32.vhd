@@ -2,9 +2,9 @@
 -- Company: 
 -- Engineer: 
 -- 
--- Create Date:    17:40:10 07/14/2017 
+-- Create Date:    13:54:38 07/15/2017 
 -- Design Name: 
--- Module Name:    ConwayAutomaton - Behavioral 
+-- Module Name:    MuxAddr32 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -29,20 +29,22 @@ use IEEE.STD_LOGIC_1164.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ConwayAutomaton is
-    Port ( clk : in  STD_LOGIC;
-           ram_data_out : out  STD_LOGIC;
-           ram_data_in : in  STD_LOGIC;
-			  ram_addr: out std_logic_vector(31 downto 0);
-			  ram_we: out STD_LOGIC;
-				initModule_init : in STD_LOGIC;
-           iterationWriter_start : out  STD_LOGIC;
-           iterationWriter_finished : in  STD_LOGIC);
-end ConwayAutomaton;
+entity MuxAddr32 is
+    Port ( initConway : in  STD_LOGIC;
+           engineWriter : in  STD_LOGIC;
+           addrInit : in  STD_LOGIC_VECTOR (31 downto 0);
+           addrConway : in  STD_LOGIC_VECTOR (31 downto 0);
+           addrIteration : in  STD_LOGIC_VECTOR (31 downto 0);
+           addrRam : out  STD_LOGIC_VECTOR (31 downto 0));
+end MuxAddr32;
 
-architecture Behavioral of ConwayAutomaton is
+architecture Behavioral of MuxAddr32 is
 
 begin
+
+addrRam <= addrInit when initConway ='1' else
+				addrConway when  (initConway ='0' and engineWriter ='1') else
+				addrIteration when initConway='0';
 
 
 end Behavioral;
