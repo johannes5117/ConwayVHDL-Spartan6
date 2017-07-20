@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : gesamt.vhf
--- /___/   /\     Timestamp : 07/15/2017 15:40:28
+-- /___/   /\     Timestamp : 07/20/2017 18:30:10
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -68,36 +68,39 @@ architecture BEHAVIORAL of gesamt is
    attribute DDR_ALIGNMENT : string ;
    attribute BOX_TYPE      : string ;
    attribute HU_SET        : string ;
-   signal XLXN_42                       : std_logic;
-   signal XLXN_43                       : std_logic;
-   signal XLXN_46                       : std_logic;
-   signal XLXN_54                       : std_logic;
-   signal XLXN_63                       : std_logic;
-   signal XLXN_68                       : std_logic_vector (11 downto 0);
-   signal XLXN_69                       : std_logic_vector (11 downto 0);
-   signal XLXN_78                       : std_logic_vector (31 downto 0);
-   signal XLXN_85                       : std_logic;
-   signal XLXN_94                       : std_logic_vector (7 downto 0);
-   signal XLXN_95                       : std_logic_vector (7 downto 0);
-   signal XLXN_96                       : std_logic_vector (7 downto 0);
-   signal XLXN_189                      : std_logic;
-   signal XLXN_192                      : std_logic;
-   signal XLXN_195                      : std_logic;
-   signal XLXN_196                      : std_logic;
-   signal XLXN_197                      : std_logic_vector (11 downto 0);
-   signal XLXN_198                      : std_logic_vector (11 downto 0);
-   signal XLXN_199                      : std_logic_vector (7 downto 0);
-   signal XLXN_200                      : std_logic;
-   signal XLXN_201                      : std_logic;
-   signal XLXN_203                      : std_logic;
-   signal XLXN_209                      : std_logic;
-   signal XLXN_213                      : std_logic_vector (31 downto 0);
-   signal XLXN_214                      : std_logic_vector (31 downto 0);
-   signal XLXN_215                      : std_logic;
-   signal XLXN_217                      : std_logic;
-   signal XLXN_220                      : std_logic_vector (31 downto 0);
-   signal XLXN_221                      : std_logic;
-   signal XLXI_49_addrConway_openSignal : std_logic_vector (31 downto 0);
+   signal XLXN_42     : std_logic;
+   signal XLXN_43     : std_logic;
+   signal XLXN_46     : std_logic;
+   signal XLXN_54     : std_logic;
+   signal XLXN_63     : std_logic;
+   signal XLXN_68     : std_logic_vector (11 downto 0);
+   signal XLXN_69     : std_logic_vector (11 downto 0);
+   signal XLXN_78     : std_logic_vector (31 downto 0);
+   signal XLXN_85     : std_logic;
+   signal XLXN_94     : std_logic_vector (7 downto 0);
+   signal XLXN_95     : std_logic_vector (7 downto 0);
+   signal XLXN_96     : std_logic_vector (7 downto 0);
+   signal XLXN_192    : std_logic;
+   signal XLXN_195    : std_logic;
+   signal XLXN_196    : std_logic;
+   signal XLXN_197    : std_logic_vector (11 downto 0);
+   signal XLXN_198    : std_logic_vector (11 downto 0);
+   signal XLXN_199    : std_logic_vector (7 downto 0);
+   signal XLXN_200    : std_logic;
+   signal XLXN_209    : std_logic;
+   signal XLXN_213    : std_logic_vector (31 downto 0);
+   signal XLXN_214    : std_logic_vector (31 downto 0);
+   signal XLXN_215    : std_logic;
+   signal XLXN_217    : std_logic;
+   signal XLXN_220    : std_logic_vector (31 downto 0);
+   signal XLXN_222    : std_logic_vector (31 downto 0);
+   signal XLXN_223    : std_logic;
+   signal XLXN_234    : std_logic;
+   signal XLXN_235    : std_logic;
+   signal XLXN_236    : std_logic;
+   signal XLXN_238    : std_logic;
+   signal XLXN_241    : std_logic;
+   signal XLXN_242    : std_logic;
    component clk_wiz_v3_6
       port ( CLK_IN1  : in    std_logic; 
              CLK_OUT1 : out   std_logic);
@@ -228,7 +231,20 @@ architecture BEHAVIORAL of gesamt is
              ram_addr             : out   std_logic_vector (31 downto 0));
    end component;
    
+   component ConwayAutomaton
+      port ( clk                        : in    std_logic; 
+             ram_data_in                : in    std_logic; 
+             initModule_init            : in    std_logic; 
+             iterationWriter_finished   : in    std_logic; 
+             ram_data_out               : out   std_logic; 
+             ram_we                     : out   std_logic; 
+             iterationWriter_start      : out   std_logic; 
+             ram_addr                   : out   std_logic_vector (31 downto 0); 
+             iterationWriter_inProgress : out   std_logic);
+   end component;
+   
    attribute HU_SET of XLXI_50 : label is "XLXI_50_0";
+   attribute HU_SET of XLXI_54 : label is "XLXI_54_1";
 begin
    XLXI_3 : clk_wiz_v3_6
       port map (CLK_IN1=>clk_in,
@@ -295,7 +311,7 @@ begin
    
    XLXI_46 : IterationWriter
       port map (clk=>XLXN_209,
-                engine_read_start=>XLXN_189,
+                engine_read_start=>XLXN_238,
                 framebuffer_writeable=>XLXN_195,
                 ram_data_in=>XLXN_192,
                 engine_write_finished=>XLXN_200,
@@ -308,34 +324,47 @@ begin
    XLXI_47 : Conway_Ram
       port map (address(31 downto 0)=>XLXN_213(31 downto 0),
                 clk=>XLXN_209,
-                data_input=>XLXN_201,
+                data_input=>XLXN_234,
                 we=>XLXN_215,
                 data_output=>XLXN_192);
    
    XLXI_49 : MuxAddr32
-      port map (addrConway(31 downto 0)=>XLXI_49_addrConway_openSignal(31 
-            downto 0),
+      port map (addrConway(31 downto 0)=>XLXN_222(31 downto 0),
                 addrInit(31 downto 0)=>XLXN_220(31 downto 0),
                 addrIteration(31 downto 0)=>XLXN_214(31 downto 0),
-                engineWriter=>XLXN_189,
-                initConway=>XLXN_203,
+                engineWriter=>XLXN_242,
+                initConway=>XLXN_241,
                 addrRam(31 downto 0)=>XLXN_213(31 downto 0));
    
    XLXI_50 : M2_1_HXILINX_gesamt
-      port map (D0=>XLXN_221,
+      port map (D0=>XLXN_223,
                 D1=>XLXN_217,
-                S0=>XLXN_203,
+                S0=>XLXN_241,
                 O=>XLXN_215);
    
    XLXI_51 : ConwayInitializer
       port map (clk=>XLXN_209,
-                conwayAutomaton_init=>XLXN_203,
+                conwayAutomaton_init=>XLXN_241,
                 ram_addr(31 downto 0)=>XLXN_220(31 downto 0),
-                ram_data=>XLXN_201,
+                ram_data=>XLXN_236,
                 ram_we=>XLXN_217);
    
-   XLXI_52 : GND
-      port map (G=>XLXN_221);
+   XLXI_53 : ConwayAutomaton
+      port map (clk=>XLXN_209,
+                initModule_init=>XLXN_241,
+                iterationWriter_finished=>XLXN_200,
+                ram_data_in=>XLXN_192,
+                iterationWriter_inProgress=>XLXN_242,
+                iterationWriter_start=>XLXN_238,
+                ram_addr(31 downto 0)=>XLXN_222(31 downto 0),
+                ram_data_out=>XLXN_235,
+                ram_we=>XLXN_223);
+   
+   XLXI_54 : M2_1_HXILINX_gesamt
+      port map (D0=>XLXN_235,
+                D1=>XLXN_236,
+                S0=>XLXN_241,
+                O=>XLXN_234);
    
 end BEHAVIORAL;
 

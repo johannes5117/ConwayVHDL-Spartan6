@@ -62,7 +62,7 @@ IF(rising_edge(clk_108))THEN
 		green<=(others=>data_in(1));
 		blue<=(others=>data_in(2));
 		
-		IF(HSCALE<80)THEN
+		IF(HSCALE<79)THEN
 			pixel_x <= std_logic_vector(to_unsigned(HSCALE,pixel_x'length));
 			pixel_y <= std_logic_vector(to_unsigned(VSCALE,pixel_y'length));
 			HSCALE<=HSCALE+1;
@@ -103,8 +103,8 @@ IF(rising_edge(clk_108))THEN
 	END IF;
    IF(HPOS>48 AND HPOS<160)THEN----HSYNC
 	   sync_hor<='0';
-		HSCALE <= 2;
-		pixel_x <= std_logic_vector(to_unsigned(1,pixel_x'length));
+		HSCALE <= 1;
+		pixel_x <= std_logic_vector(to_unsigned(0,pixel_x'length));
 		pixel_y <= std_logic_vector(to_unsigned(VSCALE,pixel_y'length));
 	ELSE
 	   sync_hor<='1';

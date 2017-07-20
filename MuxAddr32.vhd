@@ -43,8 +43,8 @@ architecture Behavioral of MuxAddr32 is
 begin
 
 addrRam <= addrInit when initConway ='1' else
-				addrConway when  (initConway ='0' and engineWriter ='1') else
-				addrIteration when initConway='0';
+				addrConway when  (initConway ='0' and engineWriter ='0') else
+				addrIteration when (initConway ='0' and engineWriter ='1');
 
 
 end Behavioral;

@@ -43,11 +43,15 @@ architecture Behavioral of ConwayInitializer is
 	SIGNAL HPOS: INTEGER RANGE -1 TO 80:=-1;
 	signal signal_data : std_logic:='0';
 	SIGNAL VPOS: INTEGER RANGE 0 TO 64:=0;
+	signal signal_ram_address: std_logic_vector(31 downto 0);
+	signal divider : std_logic:='0';
+	signal divider_two : std_logic:='0';
 begin
 PROCESS(clk)
 BEGIN
 
-	if(rising_edge(clk) and signal_init_running='1') then
+	if(rising_edge(clk) and signal_init_running='1' ) then
+	  if(divider='0' and divider_two ='0') then
 		IF(HPOS<79)THEN
 			HPOS<=HPOS+1;
 		ELSE
@@ -61,20 +65,28 @@ BEGIN
 			END IF;
 		END IF;
 					
-		if(HPOS=10 and VPOS=10) then
-			signal_data <= '1';
-		elsif(HPOS=1 and VPOS=1) then
-			signal_data <= '1';
-		elsif(HPOS=78 and VPOS=62) then
-			signal_data <= '1';
-		elsif(HPOS=40 and VPOS=32) then
-			signal_data <= '1';
+		
+		divider <= '1';
+		elsif(divider = '1' and divider_two='0') then
+			signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80 + HPOS-1, ram_addr'length));
+			if(HPOS=10 and VPOS=10) then
+				signal_data <= '1';
+			elsif(HPOS=11 and VPOS=10) then
+				signal_data <= '1';
+			elsif(HPOS=12 and VPOS=10) then
+				signal_data <= '1';
+			else
+				signal_data <= '0';
+			end if;
+			ram_we <= '1';
+			divider_two <= '1';
 		else
-			signal_data <= '0';
-		end if;
-		ram_we <= '1';
+			divider<='0';
+			divider_two <='0';
+		end if; 
+		
 	end if;
-	ram_addr <= std_logic_vector(to_unsigned(VPOS*80 + HPOS, ram_addr'length));
+	ram_addr <= signal_ram_address;
 	ram_data <= signal_data;
 	conwayAutomaton_init <= signal_init_running;
 END PROCESS;

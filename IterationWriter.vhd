@@ -50,62 +50,66 @@ signal value: STD_LOGIC_VECTOR(7 downto 0);
 signal write_done: Std_logic:='0';
 signal value_out_signal : std_logic_vector (7 downto 0);
 signal divider : std_logic:='0';
+signal signal_framebuffer_x :std_logic_vector(11 downto 0);
+signal signal_framebuffer_y :std_logic_vector(11 downto 0);
 signal signal_take_data : std_logic:='0';
-signal signal_framebuffer_writeable_pre: std_logic:='0';
+signal signal_ram_address: std_logic_vector(31 downto 0);
+signal activeRound: std_logic:='0';
+type state_type is (getconwayram , computepixel, setpixel, writepixel);
+signal state : state_type := getconwayram;
+
 begin
 
 PROCESS(clk)
 BEGIN
 	if(rising_edge(clk)) then
-		if( framebuffer_writeable='1' and signal_framebuffer_writeable_pre = '0') then
-				-- load value
-				ram_addr <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
-				divider <= '1';
-		elsif(framebuffer_writeable='1' and signal_framebuffer_writeable_pre = '1') then
-			if( divider = '0') then
-				signal_take_data <= '1';
-				-- Count pixels
+		if(engine_read_start = '1') then
+			activeRound <= '1';
+			engine_write_finished <= '0';
+		end if;
+		if(framebuffer_writeable = '1') then
+			if state = getconwayram and activeRound = '1' then
+				-- framebuffer takes data on rising edge of take_data
+				signal_take_data <= '0';
 				IF(HPOS<79)THEN
 					HPOS<=HPOS+1;
+					state <= setpixel;
 				ELSE
 					HPOS<=0;
 					IF(VPOS<63)THEN
 						VPOS<=VPOS+1;
+						state <= setpixel;
 					ELSE
+						activeRound <= '0';
+						engine_write_finished <= '1';
+						state <= getconwayram;
 						VPOS<=0; 
 					END IF;
 				END IF;
-				-- load value
-				ram_addr <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
-				divider <= '1';
-			else
-				if(HPOS = 0 or HPOS = 79 or VPOS = 0 or VPOS = 63) then 
-					signal_take_data <= '0';
-					if(HPOS = 79) then
-						value_out_signal<="11111111";
-					elsif(HPOS = 0) then
-						value_out_signal<="11111111";
-					elsif(VPOS =0) then
-						value_out_signal<="01000010";
-					elsif(VPOS =63) then
-						value_out_signal<="11111111";
-					end if;
-				else
+			elsif state = computepixel then
+				signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80 + HPOS-1, ram_addr'length));
 					if(ram_data_in = '1') then
 						value_out_signal<="00100100";
 					else
 						value_out_signal<="10000001";
 					end if;
-				end if;
-				framebuffer_data_out <= value_out_signal;
-				framebuffer_addr_x <= std_logic_vector(to_unsigned(HPOS, framebuffer_addr_x'length));
-				framebuffer_addr_y <=std_logic_vector(to_unsigned(VPOS, framebuffer_addr_y'length));
-				divider <= '0';
+				state <= writepixel;
+			elsif state = setpixel then
+				state <= computepixel;
+				signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
+			else
+				state <= getconwayram;
+				-- framebuffer takes data on rising edge of take_data
+				signal_take_data <= '1';
 			end if;
-		end if;
-	
+			else 
+				state <= getconwayram;
+			end if;
 			framebuffer_take_data <= signal_take_data;
-			signal_framebuffer_writeable_pre <= framebuffer_writeable;
+			framebuffer_addr_x <= signal_framebuffer_x;
+			framebuffer_addr_y <= signal_framebuffer_y;
+			framebuffer_data_out <= value_out_signal;
+			ram_addr <= signal_ram_address;
 	end if;
 
 	
