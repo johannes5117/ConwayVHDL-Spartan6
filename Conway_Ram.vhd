@@ -42,8 +42,7 @@ end Conway_Ram;
 architecture Behavioral of Conway_Ram is
 type ram_t is array (0 to 5120) of std_logic;
 signal ram : ram_t := (others => ('0'));
---attribute ram_style: string;
---attribute ram_style of ram : signal is "auto";
+
 
 begin
 

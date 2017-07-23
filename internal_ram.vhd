@@ -42,8 +42,7 @@ architecture Behavioral of internal_ram is
 
 type ram_t is array (0 to 5120) of std_logic_vector(7 downto 0);
 signal ram : ram_t := (others => (others => '1'));
---attribute ram_style: string;
---attribute ram_style of ram : signal is "auto";
+
 
 begin
 

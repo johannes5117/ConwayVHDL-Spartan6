@@ -34,6 +34,7 @@ entity IterationWriter is
     Port ( clk : in  STD_LOGIC;
            engine_write_finished : out  STD_LOGIC;
            engine_read_start : in  STD_LOGIC;
+			  engine_iteration_in_progress : in STD_LOGIC;
            ram_data_in : in  STD_LOGIC;
            framebuffer_data_out : out  STD_LOGIC_VECTOR (7 downto 0);
            ram_addr: out std_logic_vector(31 downto 0);
@@ -55,7 +56,8 @@ signal signal_framebuffer_y :std_logic_vector(11 downto 0);
 signal signal_take_data : std_logic:='0';
 signal signal_ram_address: std_logic_vector(31 downto 0);
 signal activeRound: std_logic:='0';
-type state_type is (getconwayram , computepixel, setpixel, writepixel);
+signal signal_engine_write_finished: std_logic:='0';
+type state_type is (getconwayram , computepixel, setpixel, waitpixel, writepixel);
 signal state : state_type := getconwayram;
 
 begin
@@ -65,9 +67,9 @@ BEGIN
 	if(rising_edge(clk)) then
 		if(engine_read_start = '1') then
 			activeRound <= '1';
-			engine_write_finished <= '0';
+			signal_engine_write_finished <= '0';
 		end if;
-		if(framebuffer_writeable = '1') then
+		if(framebuffer_writeable = '1' and engine_iteration_in_progress = '1') then
 			if state = getconwayram and activeRound = '1' then
 				-- framebuffer takes data on rising edge of take_data
 				signal_take_data <= '0';
@@ -81,7 +83,7 @@ BEGIN
 						state <= setpixel;
 					ELSE
 						activeRound <= '0';
-						engine_write_finished <= '1';
+						signal_engine_write_finished <= '1';
 						state <= getconwayram;
 						VPOS<=0; 
 					END IF;
@@ -91,7 +93,7 @@ BEGIN
                     if(HPOS = 79) then
                         value_out_signal<="01000010";
                     elsif(HPOS = 0) then
-                        value_out_signal<="11000011";
+                        value_out_signal<="01000010";
                     elsif(VPOS =0) then
                         value_out_signal<="01000010";
                     elsif(VPOS =63) then
@@ -106,23 +108,26 @@ BEGIN
 					end if;
 				state <= writepixel;
 			elsif state = setpixel then
-				state <= computepixel;
+				state <= waitpixel;
 				signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
 				signal_framebuffer_x <= std_logic_vector(to_unsigned(HPOS, signal_framebuffer_x'length));
 				signal_framebuffer_y <= std_logic_vector(to_unsigned(VPOS, signal_framebuffer_y'length));
+			elsif state = waitpixel then
+				state <= computepixel;
 			else
 				state <= getconwayram;
 				-- framebuffer takes data on rising edge of take_data
 				signal_take_data <= '1';
 			end if;
-			else 
-				state <= getconwayram;
-			end if;
-			framebuffer_take_data <= signal_take_data;
-			framebuffer_addr_x <= signal_framebuffer_x;
-			framebuffer_addr_y <= signal_framebuffer_y;
-			framebuffer_data_out <= value_out_signal;
-			ram_addr <= signal_ram_address;
+		else 
+			state <= getconwayram;
+		end if;
+		framebuffer_take_data <= signal_take_data;
+		framebuffer_addr_x <= signal_framebuffer_x;
+		framebuffer_addr_y <= signal_framebuffer_y;
+		framebuffer_data_out <= value_out_signal;
+		ram_addr <= signal_ram_address;
+		engine_write_finished <= signal_engine_write_finished;
 	end if;
 
 	

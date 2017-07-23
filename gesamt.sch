@@ -43,10 +43,10 @@
         <signal name="XLXN_235" />
         <signal name="XLXN_236" />
         <signal name="XLXN_238" />
-        <signal name="XLXN_239" />
         <signal name="XLXN_223" />
         <signal name="XLXN_241" />
         <signal name="XLXN_242" />
+        <signal name="XLXN_243" />
         <port polarity="Input" name="clk_in" />
         <port polarity="Output" name="clk_monitor" />
         <port polarity="Output" name="sync_hor" />
@@ -174,7 +174,8 @@
             <rect width="256" x="64" y="-256" height="320" />
         </blockdef>
         <blockdef name="IterationWriter">
-            <timestamp>2017-7-15T11:25:15</timestamp>
+            <timestamp>2017-7-23T16:16:16</timestamp>
+            <line x2="0" y1="224" y2="224" x1="64" />
             <line x2="0" y1="160" y2="160" x1="64" />
             <rect width="64" x="528" y="148" height="24" />
             <line x2="592" y1="160" y2="160" x1="528" />
@@ -189,7 +190,7 @@
             <line x2="592" y1="-96" y2="-96" x1="528" />
             <rect width="64" x="528" y="-44" height="24" />
             <line x2="592" y1="-32" y2="-32" x1="528" />
-            <rect width="464" x="64" y="-384" height="576" />
+            <rect width="464" x="64" y="-384" height="640" />
         </blockdef>
         <blockdef name="MuxAddr32">
             <timestamp>2017-7-15T11:59:55</timestamp>
@@ -309,13 +310,14 @@
             <blockpin signalname="XLXN_209" name="clk" />
             <blockpin signalname="XLXN_238" name="engine_read_start" />
             <blockpin signalname="XLXN_192" name="ram_data_in" />
+            <blockpin signalname="XLXN_195" name="framebuffer_writeable" />
             <blockpin signalname="XLXN_200" name="engine_write_finished" />
             <blockpin signalname="XLXN_196" name="framebuffer_take_data" />
             <blockpin signalname="XLXN_199(7:0)" name="framebuffer_data_out(7:0)" />
+            <blockpin signalname="XLXN_214(31:0)" name="ram_addr(31:0)" />
             <blockpin signalname="XLXN_198(11:0)" name="framebuffer_addr_x(11:0)" />
             <blockpin signalname="XLXN_197(11:0)" name="framebuffer_addr_y(11:0)" />
-            <blockpin signalname="XLXN_195" name="framebuffer_writeable" />
-            <blockpin signalname="XLXN_214(31:0)" name="ram_addr(31:0)" />
+            <blockpin signalname="XLXN_243" name="engine_iteration_in_progress" />
         </block>
         <block symbolname="Conway_Ram" name="XLXI_47">
             <blockpin signalname="XLXN_209" name="clk" />
@@ -326,7 +328,7 @@
         </block>
         <block symbolname="MuxAddr32" name="XLXI_49">
             <blockpin signalname="XLXN_241" name="initConway" />
-            <blockpin signalname="XLXN_242" name="engineWriter" />
+            <blockpin signalname="XLXN_243" name="engineWriter" />
             <blockpin signalname="XLXN_220(31:0)" name="addrInit(31:0)" />
             <blockpin signalname="XLXN_222(31:0)" name="addrConway(31:0)" />
             <blockpin signalname="XLXN_214(31:0)" name="addrIteration(31:0)" />
@@ -360,7 +362,7 @@
             <blockpin signalname="XLXN_223" name="ram_we" />
             <blockpin signalname="XLXN_238" name="iterationWriter_start" />
             <blockpin signalname="XLXN_222(31:0)" name="ram_addr(31:0)" />
-            <blockpin signalname="XLXN_242" name="iterationWriter_inProgress" />
+            <blockpin signalname="XLXN_243" name="iterationWriter_inProgress" />
         </block>
     </netlist>
     <sheet sheetnum="1" width="7040" height="5440">
@@ -646,10 +648,13 @@
             <wire x2="1136" y1="2800" y2="2896" x1="1136" />
             <wire x2="1664" y1="2800" y2="2800" x1="1136" />
         </branch>
-        <branch name="XLXN_242">
-            <wire x2="1312" y1="2768" y2="2768" x1="1056" />
+        <branch name="XLXN_243">
+            <wire x2="1232" y1="2768" y2="2768" x1="1056" />
+            <wire x2="1312" y1="2768" y2="2768" x1="1232" />
             <wire x2="1312" y1="2768" y2="2992" x1="1312" />
             <wire x2="1568" y1="2992" y2="2992" x1="1312" />
+            <wire x2="1760" y1="1936" y2="1936" x1="1232" />
+            <wire x2="1232" y1="1936" y2="2768" x1="1232" />
         </branch>
     </sheet>
 </drawing>

@@ -61,24 +61,22 @@ BEGIN
 			ELSE
 				VPOS<=0;
 				signal_init_running <= '0';
-				ram_we <= '0';
 			END IF;
 		END IF;
 					
 		
 		divider <= '1';
 		elsif(divider = '1' and divider_two='0') then
-			signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80 + HPOS-1, ram_addr'length));
+			signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80 + HPOS, ram_addr'length));
 			if(HPOS=10 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=11 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=12 and VPOS=10) then
-				signal_data <= '1';
-			else
 				signal_data <= '0';
+			elsif(HPOS=11 and VPOS=10) then
+				signal_data <= '0';
+			elsif(HPOS=12 and VPOS=10) then
+				signal_data <= '0';
+			else
+				signal_data <= '1';
 			end if;
-			ram_we <= '1';
 			divider_two <= '1';
 		else
 			divider<='0';
@@ -88,6 +86,8 @@ BEGIN
 	end if;
 	ram_addr <= signal_ram_address;
 	ram_data <= signal_data;
+	ram_we <= '1';
+
 	conwayAutomaton_init <= signal_init_running;
 END PROCESS;
 end Behavioral;

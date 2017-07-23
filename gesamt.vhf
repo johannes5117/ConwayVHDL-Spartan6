@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : gesamt.vhf
--- /___/   /\     Timestamp : 07/20/2017 18:30:10
+-- /___/   /\     Timestamp : 07/23/2017 18:16:48
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -100,7 +100,7 @@ architecture BEHAVIORAL of gesamt is
    signal XLXN_236    : std_logic;
    signal XLXN_238    : std_logic;
    signal XLXN_241    : std_logic;
-   signal XLXN_242    : std_logic;
+   signal XLXN_243    : std_logic;
    component clk_wiz_v3_6
       port ( CLK_IN1  : in    std_logic; 
              CLK_OUT1 : out   std_logic);
@@ -187,16 +187,21 @@ architecture BEHAVIORAL of gesamt is
    end component;
    
    component IterationWriter
-      port ( clk                   : in    std_logic; 
-             engine_read_start     : in    std_logic; 
-             ram_data_in           : in    std_logic; 
-             engine_write_finished : out   std_logic; 
-             framebuffer_take_data : out   std_logic; 
-             framebuffer_data_out  : out   std_logic_vector (7 downto 0); 
-             framebuffer_addr_x    : out   std_logic_vector (11 downto 0); 
-             framebuffer_addr_y    : out   std_logic_vector (11 downto 0); 
-             framebuffer_writeable : in    std_logic; 
-             ram_addr              : out   std_logic_vector (31 downto 0));
+      port ( clk                          : in    std_logic; 
+             engine_read_start            : in    std_logic; 
+             ram_data_in                  : in    std_logic; 
+             framebuffer_writeable        : in    std_logic; 
+             engine_write_finished        : out   std_logic; 
+             framebuffer_take_data        : out   std_logic; 
+             framebuffer_data_out         : out   std_logic_vector (7 downto 
+            0); 
+             ram_addr                     : out   std_logic_vector (31 downto 
+            0); 
+             framebuffer_addr_x           : out   std_logic_vector (11 downto 
+            0); 
+             framebuffer_addr_y           : out   std_logic_vector (11 downto 
+            0); 
+             engine_iteration_in_progress : in    std_logic);
    end component;
    
    component Conway_Ram
@@ -311,6 +316,7 @@ begin
    
    XLXI_46 : IterationWriter
       port map (clk=>XLXN_209,
+                engine_iteration_in_progress=>XLXN_243,
                 engine_read_start=>XLXN_238,
                 framebuffer_writeable=>XLXN_195,
                 ram_data_in=>XLXN_192,
@@ -332,7 +338,7 @@ begin
       port map (addrConway(31 downto 0)=>XLXN_222(31 downto 0),
                 addrInit(31 downto 0)=>XLXN_220(31 downto 0),
                 addrIteration(31 downto 0)=>XLXN_214(31 downto 0),
-                engineWriter=>XLXN_242,
+                engineWriter=>XLXN_243,
                 initConway=>XLXN_241,
                 addrRam(31 downto 0)=>XLXN_213(31 downto 0));
    
@@ -354,7 +360,7 @@ begin
                 initModule_init=>XLXN_241,
                 iterationWriter_finished=>XLXN_200,
                 ram_data_in=>XLXN_192,
-                iterationWriter_inProgress=>XLXN_242,
+                iterationWriter_inProgress=>XLXN_243,
                 iterationWriter_start=>XLXN_238,
                 ram_addr(31 downto 0)=>XLXN_222(31 downto 0),
                 ram_data_out=>XLXN_235,
