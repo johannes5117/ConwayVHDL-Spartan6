@@ -37,34 +37,34 @@ Clock clk_in to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-blue<0>     |        10.703(R)|      SLOW  |         6.041(R)|      FAST  |XLXN_209          |   0.000|
-blue<1>     |        10.864(R)|      SLOW  |         6.138(R)|      FAST  |XLXN_209          |   0.000|
-blue<2>     |        11.496(R)|      SLOW  |         6.534(R)|      FAST  |XLXN_209          |   0.000|
-blue<3>     |        12.573(R)|      SLOW  |         7.186(R)|      FAST  |XLXN_209          |   0.000|
-blue<4>     |        10.232(R)|      SLOW  |         5.777(R)|      FAST  |XLXN_209          |   0.000|
-blue<5>     |        11.830(R)|      SLOW  |         6.792(R)|      FAST  |XLXN_209          |   0.000|
-blue<6>     |        10.942(R)|      SLOW  |         6.216(R)|      FAST  |XLXN_209          |   0.000|
-blue<7>     |        10.809(R)|      SLOW  |         6.083(R)|      FAST  |XLXN_209          |   0.000|
+blue<0>     |        10.918(R)|      SLOW  |         6.157(R)|      FAST  |XLXN_209          |   0.000|
+blue<1>     |        11.079(R)|      SLOW  |         6.254(R)|      FAST  |XLXN_209          |   0.000|
+blue<2>     |         9.719(R)|      SLOW  |         5.442(R)|      FAST  |XLXN_209          |   0.000|
+blue<3>     |        10.797(R)|      SLOW  |         6.095(R)|      FAST  |XLXN_209          |   0.000|
+blue<4>     |        10.971(R)|      SLOW  |         6.198(R)|      FAST  |XLXN_209          |   0.000|
+blue<5>     |         9.831(R)|      SLOW  |         5.502(R)|      FAST  |XLXN_209          |   0.000|
+blue<6>     |        11.440(R)|      SLOW  |         6.544(R)|      FAST  |XLXN_209          |   0.000|
+blue<7>     |        10.904(R)|      SLOW  |         6.131(R)|      FAST  |XLXN_209          |   0.000|
 clk_monitor |         8.157(R)|      SLOW  |         4.407(R)|      FAST  |XLXN_209          |   0.000|
             |         8.132(F)|      SLOW  |         4.341(F)|      FAST  |XLXN_209          |   0.000|
-green<0>    |        12.323(R)|      SLOW  |         7.055(R)|      FAST  |XLXN_209          |   0.000|
-green<1>    |        10.806(R)|      SLOW  |         6.153(R)|      FAST  |XLXN_209          |   0.000|
-green<2>    |        10.675(R)|      SLOW  |         6.060(R)|      FAST  |XLXN_209          |   0.000|
-green<3>    |        10.711(R)|      SLOW  |         6.099(R)|      FAST  |XLXN_209          |   0.000|
-green<4>    |        11.918(R)|      SLOW  |         6.768(R)|      FAST  |XLXN_209          |   0.000|
-green<5>    |        10.453(R)|      SLOW  |         5.917(R)|      FAST  |XLXN_209          |   0.000|
-green<6>    |        11.918(R)|      SLOW  |         6.768(R)|      FAST  |XLXN_209          |   0.000|
-green<7>    |         9.861(R)|      SLOW  |         5.483(R)|      FAST  |XLXN_209          |   0.000|
-red<0>      |        13.131(R)|      SLOW  |         7.648(R)|      FAST  |XLXN_209          |   0.000|
-red<1>      |        13.304(R)|      SLOW  |         7.749(R)|      FAST  |XLXN_209          |   0.000|
-red<2>      |        13.015(R)|      SLOW  |         7.562(R)|      FAST  |XLXN_209          |   0.000|
-red<3>      |        13.117(R)|      SLOW  |         7.631(R)|      FAST  |XLXN_209          |   0.000|
-red<4>      |        12.912(R)|      SLOW  |         7.523(R)|      FAST  |XLXN_209          |   0.000|
-red<5>      |        12.638(R)|      SLOW  |         7.270(R)|      FAST  |XLXN_209          |   0.000|
-red<6>      |        12.694(R)|      SLOW  |         7.326(R)|      FAST  |XLXN_209          |   0.000|
-red<7>      |        12.533(R)|      SLOW  |         7.229(R)|      FAST  |XLXN_209          |   0.000|
-sync_hor    |        10.445(R)|      SLOW  |         5.914(R)|      FAST  |XLXN_209          |   0.000|
-sync_vert   |        10.604(R)|      SLOW  |         5.999(R)|      FAST  |XLXN_209          |   0.000|
+green<0>    |        11.909(R)|      SLOW  |         6.613(R)|      FAST  |XLXN_209          |   0.000|
+green<1>    |        11.707(R)|      SLOW  |         6.743(R)|      FAST  |XLXN_209          |   0.000|
+green<2>    |        11.575(R)|      SLOW  |         6.649(R)|      FAST  |XLXN_209          |   0.000|
+green<3>    |        11.611(R)|      SLOW  |         6.688(R)|      FAST  |XLXN_209          |   0.000|
+green<4>    |        10.837(R)|      SLOW  |         6.087(R)|      FAST  |XLXN_209          |   0.000|
+green<5>    |        11.354(R)|      SLOW  |         6.507(R)|      FAST  |XLXN_209          |   0.000|
+green<6>    |        10.837(R)|      SLOW  |         6.087(R)|      FAST  |XLXN_209          |   0.000|
+green<7>    |        10.761(R)|      SLOW  |         6.072(R)|      FAST  |XLXN_209          |   0.000|
+red<0>      |        12.804(R)|      SLOW  |         7.419(R)|      FAST  |XLXN_209          |   0.000|
+red<1>      |        13.050(R)|      SLOW  |         7.587(R)|      FAST  |XLXN_209          |   0.000|
+red<2>      |        12.761(R)|      SLOW  |         7.400(R)|      FAST  |XLXN_209          |   0.000|
+red<3>      |        12.779(R)|      SLOW  |         7.409(R)|      FAST  |XLXN_209          |   0.000|
+red<4>      |        12.618(R)|      SLOW  |         7.312(R)|      FAST  |XLXN_209          |   0.000|
+red<5>      |        12.384(R)|      SLOW  |         7.108(R)|      FAST  |XLXN_209          |   0.000|
+red<6>      |        12.269(R)|      SLOW  |         7.057(R)|      FAST  |XLXN_209          |   0.000|
+red<7>      |        12.103(R)|      SLOW  |         6.955(R)|      FAST  |XLXN_209          |   0.000|
+sync_hor    |        10.850(R)|      SLOW  |         6.138(R)|      FAST  |XLXN_209          |   0.000|
+sync_vert   |        10.784(R)|      SLOW  |         6.097(R)|      FAST  |XLXN_209          |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock clk_in
@@ -72,11 +72,11 @@ Clock to Setup on destination clock clk_in
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk_in         |    7.517|         |         |         |
+clk_in         |    7.373|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Jul 20 18:30:57 2017 
+Analysis completed Fri Jul 21 01:03:31 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:

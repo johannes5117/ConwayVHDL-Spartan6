@@ -58,9 +58,10 @@ signal phase_write : phase_write_type := startWrite;
 
 SIGNAL HPOS: INTEGER RANGE 0 TO 80:=0;
 SIGNAL VPOS: INTEGER RANGE 0 TO 64:=0;
-signal signal_ram_address : std_logic_vector(31 downto 0);
+signal signal_ram_address : std_logic_vector(31 downto 0) := (others => '1');
 signal signal_value_out : std_logic;
 signal conwaybuffer : std_logic_vector(5119 downto 0) := (others => '0');
+signal signal_iterationWriter_inProgress : std_logic := '0';
 type integer_array is array(7 downto 0) of integer;
 signal computearray : integer_array; 
 begin
@@ -85,6 +86,7 @@ BEGIN
 					END IF;
 					phase_readram<= computeIt;
 				elsif(phase_readram=computeIt) then
+					ram_we <= '0';
 					signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
 					phase_readram<= writeIt;
 				elsif(phase_readram=writeIt) then
@@ -105,6 +107,7 @@ BEGIN
 							phase_compute <= incrementIt;
 						END IF;
 					END IF;
+					phase_compute <= computeIt;
 				elsif(phase_compute = computeIt) then
 					if(conwaybuffer(VPOS*80+HPOS+81)='1') then
 						computearray(0) <= 1;
@@ -155,20 +158,21 @@ BEGIN
 					end if;
 					signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80+ HPOS, ram_addr'length));
 					ram_we <= '1';
+					phase_compute <= writeIt;
 				elsif(phase_compute = writeIt) then
 					phase_compute <= incrementIt;
 					ram_we <= '0';
 				end if;
 			elsif(state = writeBuffer) then
 				if(phase_write = startWrite) then
-					phase_write <= writeFinish;
 					ram_we <= '0';
 					iterationWriter_start <= '1';
-					iterationWriter_inProgress <= '1';
+					signal_iterationWriter_inProgress <= '1';
+					phase_write <= writeFinish;
 				elsif(phase_write = writeFinish) then
 					if(iterationWriter_finished = '0') then 
 						iterationWriter_start <= '0';
-						iterationWriter_inProgress <= '0';
+						signal_iterationWriter_inProgress <= '0';
 						state<=waitTime;
 						phase_write<=startWrite;
 					end if;
@@ -177,7 +181,7 @@ BEGIN
 				state<=readram;
 			end if;
 	end if;
-
+	iterationWriter_inProgress <= signal_iterationWriter_inProgress;
 END PROCESS;
 
 
