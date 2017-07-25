@@ -66,3 +66,10 @@ gesamt.ngr
 *.mrp
 *.ngm
 *.csv
+planAhead_run_5/planAhead.jou
+planAhead_run_5/EndProj.data/wt/project.wpc
+planAhead_run_5/EndProj.data/wt/java_command_handlers.wdf
+planAhead_run_5/EndProj.data/runs/impl_1.psg
+planAhead_run_5/EndProj.data/cache/gesamt_ngc_zx.edif
+planAhead_run_5/EndProj.ppr
+IterationWriter.v
