@@ -56,7 +56,7 @@ signal phase_compute : phase_compute_type := incrementIt;
 type phase_write_type is (startWrite, writeFinish);
 signal phase_write : phase_write_type := startWrite;
 
-SIGNAL HPOS: INTEGER RANGE 0 TO 80:=0;
+SIGNAL HPOS: INTEGER RANGE -1 TO 80:=0;
 SIGNAL VPOS: INTEGER RANGE 0 TO 64:=0;
 signal counter : integer Range 0 to 1060000 :=0;
 signal slicer_counter : integer Range 0 to 1000:=0;
@@ -85,7 +85,7 @@ BEGIN
 							VPOS<=VPOS+1;
 							phase_readram<= computeIt;
 						ELSE
-							HPOS<=0;
+							HPOS<=-1;
 							VPOS<=1;
 							state <= compute;
 							phase_readram <= readIt;
@@ -199,7 +199,7 @@ BEGIN
 					end if;
 				end if;
 			elsif(state = waitTime) then
-				if(slicer_counter>=100) then
+				if(slicer_counter>=50) then
 					state<=readram;
 					slicer_counter <= 0;
 				end if;

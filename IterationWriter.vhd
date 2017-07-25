@@ -91,13 +91,13 @@ BEGIN
 			elsif state = computepixel then
 					if(HPOS = 0 or HPOS = 79 or VPOS = 0 or VPOS = 63) then 
                     if(HPOS = 79) then
-                        value_out_signal<="01000010";
+                        value_out_signal<="11111111";
                     elsif(HPOS = 0) then
-                        value_out_signal<="01000010";
+                        value_out_signal<="11111111";
                     elsif(VPOS =0) then
-                        value_out_signal<="01000010";
+                        value_out_signal<="11111111";
                     elsif(VPOS =63) then
-                        value_out_signal<="01000010";
+                        value_out_signal<="11111111";
                     end if;
                 else
 						if(ram_data_in = '1') then

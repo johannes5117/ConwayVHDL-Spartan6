@@ -68,67 +68,157 @@ BEGIN
 		divider <= '1';
 		elsif(divider = '1' and divider_two='0') then
 			signal_ram_address <= std_logic_vector(to_unsigned(VPOS*80 + HPOS-1, ram_addr'length));
-			if(HPOS=10 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=11 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=12 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=1 and VPOS=1) then
-				signal_data <= '1';
-			elsif(HPOS=78 and VPOS=62) then
-				signal_data <= '1';
-			elsif(HPOS=21 and VPOS=10) then
-				signal_data <= '1';
-			elsif(HPOS=21 and VPOS=11) then
-				signal_data <= '1';
-			elsif(HPOS=21 and VPOS=12) then
-				signal_data <= '1';
-			-- 3. Structure
-			elsif(HPOS=35 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=36 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=37 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=38 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=39 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=40 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=41 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=42 and VPOS=35) then
-				signal_data <= '1';
-			elsif(HPOS=35 and VPOS=36)then
-				signal_data <= '1';
-			elsif(HPOS=37 and VPOS=36) then
-				signal_data <= '1';
-			elsif(HPOS=38 and VPOS=36) then
-				signal_data <= '1';
-			elsif(HPOS=39 and VPOS=36) then
-				signal_data <= '1';
-			elsif(HPOS=40 and VPOS=36) then
-				signal_data <= '1';
-			elsif(HPOS=42 and VPOS=36) then
-				signal_data <= '1';
-			elsif(HPOS=35 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=36 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=37 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=38 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=39 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=40 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=41 and VPOS=37) then
-				signal_data <= '1';
-			elsif(HPOS=42 and VPOS=37) then
-				signal_data <= '1';
+			if(HPOS=1 and VPOS=2) then 
+ signal_data <= '1';
+elsif(HPOS=2 and VPOS=2) then 
+ signal_data <= '1';
+elsif(HPOS=3 and VPOS=2) then 
+ signal_data <= '1';
+elsif(HPOS=61 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=62 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=63 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=64 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=65 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=66 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=67 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=68 and VPOS=6) then 
+ signal_data <= '1';
+elsif(HPOS=61 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=63 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=64 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=65 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=66 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=68 and VPOS=7) then 
+ signal_data <= '1';
+elsif(HPOS=61 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=62 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=63 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=64 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=65 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=66 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=67 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=68 and VPOS=8) then 
+ signal_data <= '1';
+elsif(HPOS=28 and VPOS=15) then 
+ signal_data <= '1';
+elsif(HPOS=26 and VPOS=16) then 
+ signal_data <= '1';
+elsif(HPOS=28 and VPOS=16) then 
+ signal_data <= '1';
+elsif(HPOS=16 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=17 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=24 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=25 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=38 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=39 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=59 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=60 and VPOS=17) then 
+ signal_data <= '1';
+elsif(HPOS=15 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=19 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=24 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=25 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=38 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=39 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=59 and VPOS=18) then 
+ signal_data <= '1';
+elsif(HPOS=4 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=5 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=14 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=20 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=24 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=25 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=62 and VPOS=19) then 
+ signal_data <= '1';
+elsif(HPOS=4 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=5 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=14 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=18 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=20 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=21 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=26 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=28 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=61 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=62 and VPOS=20) then 
+ signal_data <= '1';
+elsif(HPOS=14 and VPOS=21) then 
+ signal_data <= '1';
+elsif(HPOS=20 and VPOS=21) then 
+ signal_data <= '1';
+elsif(HPOS=28 and VPOS=21) then 
+ signal_data <= '1';
+elsif(HPOS=15 and VPOS=22) then 
+ signal_data <= '1';
+elsif(HPOS=19 and VPOS=22) then 
+ signal_data <= '1';
+elsif(HPOS=16 and VPOS=23) then 
+ signal_data <= '1';
+elsif(HPOS=17 and VPOS=23) then 
+ signal_data <= '1';
+elsif(HPOS=15 and VPOS=42) then 
+ signal_data <= '1';
+elsif(HPOS=16 and VPOS=42) then 
+ signal_data <= '1';
+elsif(HPOS=14 and VPOS=43) then 
+ signal_data <= '1';
+elsif(HPOS=15 and VPOS=43) then 
+ signal_data <= '1';
+elsif(HPOS=15 and VPOS=44) then 
+ signal_data <= '1';
+elsif(HPOS=76 and VPOS=61) then 
+ signal_data <= '1';
+elsif(HPOS=77 and VPOS=61) then 
+ signal_data <= '1';
+elsif(HPOS=78 and VPOS=61) then 
+ signal_data <= '1';
+
 			else
 				signal_data <= '0';
 			end if;

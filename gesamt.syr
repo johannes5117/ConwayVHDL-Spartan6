@@ -3,14 +3,14 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.28 secs
  
 --> Reading design: gesamt.prj
 
@@ -163,9 +163,9 @@ INFO:HDLCompiler:679 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" Line 44. Case st
 
 Elaborating entity <ConwayInitializer> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 53: signal_init_running should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 142: signal_ram_address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 143: signal_data should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 145: signal_init_running should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 232: signal_ram_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 233: signal_data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 235: signal_init_running should be on the sensitivity list of the process
 
 Elaborating entity <ConwayAutomaton> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayAutomaton.vhd" Line 75: initmodule_init should be on the sensitivity list of the process
@@ -310,6 +310,7 @@ Synthesizing Unit <IterationWriter>.
 	inferred   3 Adder/Subtractor(s).
 	inferred 147 D-type flip-flop(s).
 	inferred   2 Comparator(s).
+	inferred   1 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <IterationWriter> synthesized.
 
@@ -381,7 +382,7 @@ Synthesizing Unit <ConwayInitializer>.
     Found 17-bit subtractor for signal <BUS_0003_GND_56_o_sub_10_OUT> created at line 70.
     Found 8-bit adder for signal <HPOS[7]_GND_56_o_add_1_OUT> created at line 56.
     Found 7-bit adder for signal <VPOS[6]_GND_56_o_add_3_OUT> created at line 60.
-    Found 16-bit adder for signal <n0157> created at line 70.
+    Found 16-bit adder for signal <n0274> created at line 70.
     Found 7x7-bit multiplier for signal <VPOS[6]_PWR_18_o_MuLt_7_OUT> created at line 70.
     Found 8-bit comparator greater for signal <GND_56_o_HPOS[7]_LessThan_1_o> created at line 55
     Found 7-bit comparator lessequal for signal <VPOS[6]_GND_56_o_LessThan_3_o> created at line 59
@@ -390,12 +391,12 @@ Synthesizing Unit <ConwayInitializer>.
 	inferred   4 Adder/Subtractor(s).
 	inferred  51 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred  28 Multiplexer(s).
+	inferred  73 Multiplexer(s).
 Unit <ConwayInitializer> synthesized.
 
 Synthesizing Unit <ConwayAutomaton>.
     Related source file is "C:\AdvancedEmbedded\EndProj\ConwayAutomaton.vhd".
-    Found 7-bit register for signal <HPOS>.
+    Found 8-bit register for signal <HPOS>.
     Found 2-bit register for signal <phase_readram>.
     Found 7-bit register for signal <VPOS>.
     Found 2-bit register for signal <state>.
@@ -445,49 +446,49 @@ Synthesizing Unit <ConwayAutomaton>.
     | Inputs             | 7                                              |
     | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
-    | Reset              | _n0561 (positive)                              |
+    | Reset              | _n0565 (positive)                              |
     | Reset type         | synchronous                                    |
     | Reset State        | incrementit                                    |
     | Power Up State     | incrementit                                    |
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 7-bit adder for signal <HPOS[6]_GND_57_o_add_36_OUT> created at line 107.
-    Found 7-bit adder for signal <VPOS[6]_GND_57_o_add_38_OUT> created at line 112.
-    Found 15-bit adder for signal <n0281> created at line 121.
-    Found 15-bit adder for signal <n0283> created at line 126.
-    Found 15-bit adder for signal <n0289> created at line 141.
-    Found 15-bit adder for signal <n0291> created at line 146.
-    Found 32-bit adder for signal <n0427> created at line 171.
-    Found 32-bit adder for signal <n0430> created at line 171.
-    Found 32-bit adder for signal <n0433> created at line 171.
+    Found 8-bit adder for signal <HPOS[7]_GND_57_o_add_37_OUT> created at line 107.
+    Found 7-bit adder for signal <VPOS[6]_GND_57_o_add_39_OUT> created at line 112.
+    Found 16-bit adder for signal <n0284> created at line 121.
+    Found 16-bit adder for signal <n0286> created at line 126.
+    Found 16-bit adder for signal <n0292> created at line 141.
+    Found 16-bit adder for signal <n0294> created at line 146.
     Found 32-bit adder for signal <n0436> created at line 171.
     Found 32-bit adder for signal <n0439> created at line 171.
     Found 32-bit adder for signal <n0442> created at line 171.
-    Found 32-bit adder for signal <computearray[0][31]_computearray[7][31]_add_100_OUT> created at line 171.
-    Found 15-bit adder for signal <n0416> created at line 178.
-    Found 10-bit adder for signal <slicer_counter[9]_GND_57_o_add_183_OUT> created at line 209.
-    Found 21-bit adder for signal <counter[20]_GND_57_o_add_184_OUT> created at line 211.
-    Found 13-bit subtractor for signal <GND_57_o_GND_57_o_sub_58_OUT<12:0>> created at line 131.
-    Found 13-bit subtractor for signal <GND_57_o_GND_57_o_sub_62_OUT<12:0>> created at line 136.
-    Found 13-bit subtractor for signal <GND_57_o_GND_57_o_sub_74_OUT<12:0>> created at line 151.
-    Found 13-bit subtractor for signal <GND_57_o_GND_57_o_sub_78_OUT<12:0>> created at line 156.
-    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_20_o_MuLt_110_OUT> created at line 178.
+    Found 32-bit adder for signal <n0445> created at line 171.
+    Found 32-bit adder for signal <n0448> created at line 171.
+    Found 32-bit adder for signal <n0451> created at line 171.
+    Found 32-bit adder for signal <computearray[0][31]_computearray[7][31]_add_101_OUT> created at line 171.
+    Found 16-bit adder for signal <n0456> created at line 178.
+    Found 10-bit adder for signal <slicer_counter[9]_GND_57_o_add_184_OUT> created at line 209.
+    Found 21-bit adder for signal <counter[20]_GND_57_o_add_185_OUT> created at line 211.
+    Found 13-bit subtractor for signal <BUS_0015_GND_57_o_sub_59_OUT<12:0>> created at line 131.
+    Found 13-bit subtractor for signal <BUS_0017_GND_57_o_sub_63_OUT<12:0>> created at line 136.
+    Found 13-bit subtractor for signal <BUS_0025_GND_57_o_sub_75_OUT<12:0>> created at line 151.
+    Found 13-bit subtractor for signal <BUS_0027_GND_57_o_sub_79_OUT<12:0>> created at line 156.
+    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_20_o_MuLt_111_OUT> created at line 178.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <conwaybuffer>, simulation mismatch.
     Found 5120x1-bit dual-port RAM <Mram_conwaybuffer> for signal <conwaybuffer>.
-    Found 7-bit comparator greater for signal <HPOS[6]_PWR_20_o_LessThan_3_o> created at line 79
+    Found 8-bit comparator greater for signal <GND_57_o_HPOS[7]_LessThan_3_o> created at line 79
     Found 7-bit comparator greater for signal <VPOS[6]_GND_57_o_LessThan_5_o> created at line 83
-    Found 7-bit comparator greater for signal <HPOS[6]_PWR_20_o_LessThan_36_o> created at line 106
-    Found 7-bit comparator greater for signal <VPOS[6]_GND_57_o_LessThan_38_o> created at line 111
-    Found 10-bit comparator greater for signal <n0130> created at line 202
-    Found 21-bit comparator greater for signal <n0182> created at line 207
+    Found 8-bit comparator greater for signal <GND_57_o_HPOS[7]_LessThan_37_o> created at line 106
+    Found 7-bit comparator greater for signal <VPOS[6]_GND_57_o_LessThan_39_o> created at line 111
+    Found 10-bit comparator greater for signal <n0132> created at line 202
+    Found 21-bit comparator greater for signal <n0184> created at line 207
     Summary:
 	inferred   8 RAM(s).
 	inferred   1 Multiplier(s).
 	inferred  20 Adder/Subtractor(s).
-	inferred 338 D-type flip-flop(s).
+	inferred 339 D-type flip-flop(s).
 	inferred   6 Comparator(s).
-	inferred   6 Multiplexer(s).
+	inferred   8 Multiplexer(s).
 	inferred   3 Finite State Machine(s).
 Unit <ConwayAutomaton> synthesized.
 
@@ -506,15 +507,15 @@ Macro Statistics
  10-bit adder                                          : 1
  11-bit adder                                          : 2
  13-bit subtractor                                     : 4
- 15-bit adder                                          : 6
- 16-bit adder                                          : 1
+ 15-bit adder                                          : 1
+ 16-bit adder                                          : 6
  17-bit subtractor                                     : 1
  20-bit adder                                          : 2
  21-bit adder                                          : 1
  32-bit adder                                          : 7
  4-bit subtractor                                      : 2
- 7-bit adder                                           : 7
- 8-bit adder                                           : 1
+ 7-bit adder                                           : 6
+ 8-bit adder                                           : 2
 # Registers                                            : 60
  1-bit register                                        : 21
  10-bit register                                       : 1
@@ -522,25 +523,26 @@ Macro Statistics
  12-bit register                                       : 6
  21-bit register                                       : 1
  32-bit register                                       : 13
- 7-bit register                                        : 7
- 8-bit register                                        : 9
+ 7-bit register                                        : 6
+ 8-bit register                                        : 10
 # Latches                                              : 32
  1-bit latch                                           : 32
 # Comparators                                          : 24
  10-bit comparator greater                             : 1
  11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
- 7-bit comparator greater                              : 5
+ 7-bit comparator greater                              : 3
  7-bit comparator lessequal                            : 4
- 8-bit comparator greater                              : 1
-# Multiplexers                                         : 101
- 1-bit 2-to-1 multiplexer                              : 97
+ 8-bit comparator greater                              : 3
+# Multiplexers                                         : 149
+ 1-bit 2-to-1 multiplexer                              : 142
  10-bit 2-to-1 multiplexer                             : 1
  32-bit 2-to-1 multiplexer                             : 1
  7-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 3
 # FSMs                                                 : 4
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
 
 =========================================================================
 
@@ -553,35 +555,23 @@ INFO:Xst:2261 - The FF/Latch <green_0> in Unit <XLXI_27> is equivalent to the fo
 INFO:Xst:2261 - The FF/Latch <pixel_y_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_y_8> <pixel_y_9> <pixel_y_10> <pixel_y_11> 
 INFO:Xst:2261 - The FF/Latch <pixel_x_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_x_8> <pixel_x_9> <pixel_x_10> <pixel_x_11> 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_0> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_7> 
 INFO:Xst:2261 - The FF/Latch <signal_framebuffer_x_7> in Unit <XLXI_46> is equivalent to the following 26 FFs/Latches, which will be removed : <signal_framebuffer_x_8> <signal_framebuffer_x_9> <signal_framebuffer_x_10> <signal_framebuffer_x_11> <signal_framebuffer_y_7> <signal_framebuffer_y_8> <signal_framebuffer_y_9> <signal_framebuffer_y_10> <signal_framebuffer_y_11> <signal_ram_address_15> <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_5> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_1> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_6> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_3> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_4> 
-INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_0> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_7> 
-INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_1> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_6> 
-INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_2> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_5> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_addr_y_7> in Unit <XLXI_46> is equivalent to the following 26 FFs/Latches, which will be removed : <framebuffer_addr_y_8> <framebuffer_addr_y_9> <framebuffer_addr_y_10> <framebuffer_addr_y_11> <framebuffer_addr_x_7> <framebuffer_addr_x_8> <framebuffer_addr_x_9> <framebuffer_addr_x_10> <framebuffer_addr_x_11> <ram_addr_15> <ram_addr_16> <ram_addr_17> <ram_addr_18> <ram_addr_19> <ram_addr_20> <ram_addr_21> <ram_addr_22> <ram_addr_23> <ram_addr_24> <ram_addr_25> <ram_addr_26> <ram_addr_27> <ram_addr_28> <ram_addr_29> <ram_addr_30> <ram_addr_31> 
-INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_3> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_4> 
 INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <XLXI_51> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_inProgress> in Unit <XLXI_53> is equivalent to the following FF/Latch, which will be removed : <phase_write> 
+INFO:Xst:2261 - The FF/Latch <signal_ram_address_15> in Unit <XLXI_53> is equivalent to the following 16 FFs/Latches, which will be removed : <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <computearray_7_1> in Unit <XLXI_53> is equivalent to the following 239 FFs/Latches, which will be removed : <computearray_7_2> <computearray_7_3> <computearray_7_4> <computearray_7_5> <computearray_7_6> <computearray_7_7> <computearray_7_8> <computearray_7_9> <computearray_7_10> <computearray_7_11> <computearray_7_12> <computearray_7_13> <computearray_7_14> <computearray_7_15> <computearray_7_16> <computearray_7_17> <computearray_7_18> <computearray_7_19> <computearray_7_20> <computearray_7_21> <computearray_7_22> <computearray_7_23> <computearray_7_24> <computearray_7_25> <computearray_7_26> <computearray_7_27> <computearray_7_28> <computearray_7_29> <computearray_7_30> <computearray_6_1> <computearray_6_2> <computearray_6_3> <computearray_6_4> <computearray_6_5> <computearray_6_6> <computearray_6_7> <computearray_6_8> <computearray_6_9> <computearray_6_10> <computearray_6_11> <computearray_6_12> <computearray_6_13> <computearray_6_14> <computearray_6_15> <computearray_6_16>
    <computearray_6_17> <computearray_6_18> <computearray_6_19> <computearray_6_20> <computearray_6_21> <computearray_6_22> <computearray_6_23> <computearray_6_24> <computearray_6_25> <computearray_6_26> <computearray_6_27> <computearray_6_28> <computearray_6_29> <computearray_6_30> <computearray_5_1> <computearray_5_2> <computearray_5_3> <computearray_5_4> <computearray_5_5> <computearray_5_6> <computearray_5_7> <computearray_5_8> <computearray_5_9> <computearray_5_10> <computearray_5_11> <computearray_5_12> <computearray_5_13> <computearray_5_14> <computearray_5_15> <computearray_5_16> <computearray_5_17> <computearray_5_18> <computearray_5_19> <computearray_5_20> <computearray_5_21> <computearray_5_22> <computearray_5_23> <computearray_5_24> <computearray_5_25> <computearray_5_26> <computearray_5_27> <computearray_5_28> <computearray_5_29> <computearray_5_30> <computearray_4_1> <computearray_4_2> <computearray_4_3> <computearray_4_4> <computearray_4_5> <computearray_4_6> <computearray_4_7>
    <computearray_4_8> <computearray_4_9> <computearray_4_10> <computearray_4_11> <computearray_4_12> <computearray_4_13> <computearray_4_14> <computearray_4_15> <computearray_4_16> <computearray_4_17> <computearray_4_18> <computearray_4_19> <computearray_4_20> <computearray_4_21> <computearray_4_22> <computearray_4_23> <computearray_4_24> <computearray_4_25> <computearray_4_26> <computearray_4_27> <computearray_4_28> <computearray_4_29> <computearray_4_30> <computearray_3_1> <computearray_3_2> <computearray_3_3> <computearray_3_4> <computearray_3_5> <computearray_3_6> <computearray_3_7> <computearray_3_8> <computearray_3_9> <computearray_3_10> <computearray_3_11> <computearray_3_12> <computearray_3_13> <computearray_3_14> <computearray_3_15> <computearray_3_16> <computearray_3_17> <computearray_3_18> <computearray_3_19> <computearray_3_20> <computearray_3_21> <computearray_3_22> <computearray_3_23> <computearray_3_24> <computearray_3_25> <computearray_3_26> <computearray_3_27> <computearray_3_28>
    <computearray_3_29> <computearray_3_30> <computearray_2_1> <computearray_2_2> <computearray_2_3> <computearray_2_4> <computearray_2_5> <computearray_2_6> <computearray_2_7> <computearray_2_8> <computearray_2_9> <computearray_2_10> <computearray_2_11> <computearray_2_12> <computearray_2_13> <computearray_2_14> <computearray_2_15> <computearray_2_16> <computearray_2_17> <computearray_2_18> <computearray_2_19> <computearray_2_20> <computearray_2_21> <computearray_2_22> <computearray_2_23> <computearray_2_24> <computearray_2_25> <computearray_2_26> <computearray_2_27> <computearray_2_28> <computearray_2_29> <computearray_2_30> <computearray_1_1> <computearray_1_2> <computearray_1_3> <computearray_1_4> <computearray_1_5> <computearray_1_6> <computearray_1_7> <computearray_1_8> <computearray_1_9> <computearray_1_10> <computearray_1_11> <computearray_1_12> <computearray_1_13> <computearray_1_14> <computearray_1_15> <computearray_1_16> <computearray_1_17> <computearray_1_18> <computearray_1_19> <computearray_1_20>
    <computearray_1_21> <computearray_1_22> <computearray_1_23> <computearray_1_24> <computearray_1_25> <computearray_1_26> <computearray_1_27> <computearray_1_28> <computearray_1_29> <computearray_1_30> <computearray_0_1> <computearray_0_2> <computearray_0_3> <computearray_0_4> <computearray_0_5> <computearray_0_6> <computearray_0_7> <computearray_0_8> <computearray_0_9> <computearray_0_10> <computearray_0_11> <computearray_0_12> <computearray_0_13> <computearray_0_14> <computearray_0_15> <computearray_0_16> <computearray_0_17> <computearray_0_18> <computearray_0_19> <computearray_0_20> <computearray_0_21> <computearray_0_22> <computearray_0_23> <computearray_0_24> <computearray_0_25> <computearray_0_26> <computearray_0_27> <computearray_0_28> <computearray_0_29> <computearray_0_30>
 INFO:Xst:2261 - The FF/Latch <computearray_7_31> in Unit <XLXI_53> is equivalent to the following 7 FFs/Latches, which will be removed : <computearray_6_31> <computearray_5_31> <computearray_4_31> <computearray_3_31> <computearray_2_31> <computearray_1_31> <computearray_0_31> 
-INFO:Xst:2261 - The FF/Latch <signal_ram_address_15> in Unit <XLXI_53> is equivalent to the following 16 FFs/Latches, which will be removed : <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 WARNING:Xst:1426 - The value init of the FF/Latch computearray_7_31 hinder the constant cleaning in the block XLXI_53.
    You should achieve better results by setting this init to 0.
 WARNING:Xst:1710 - FF/Latch <pixel_x_7> (without init value) has a constant value of 0 in block <XLXI_27>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <pixel_y_7> (without init value) has a constant value of 0 in block <XLXI_27>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ram_data_output_3> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <ram_data_output_4> (without init value) has a constant value of 0 in block <XLXI_29>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <value_out_signal_3> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <signal_framebuffer_x_7> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <computearray_7_1> has a constant value of 0 in block <XLXI_53>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <framebuffer_data_out_3> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <framebuffer_addr_y_7> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <value_out_3> of sequential type is unconnected in block <XLXI_29>.
 WARNING:Xst:2677 - Node <value_out_4> of sequential type is unconnected in block <XLXI_29>.
@@ -634,11 +624,11 @@ WARNING:Xst:2404 -  FFs/Latches <framebuffer_addr_y<11:7>> (without init value) 
 
 Synthesizing (advanced) Unit <ConwayAutomaton>.
 The following registers are absorbed into counter <slicer_counter>: 1 register on signal <slicer_counter>.
-The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
 The following registers are absorbed into counter <counter>: 1 register on signal <counter>.
-	The following adders/subtractors are grouped into adder tree <Madd_computearray[0][31]_computearray[7][31]_add_100_OUT1> :
- 	<Madd_n0427> in block <ConwayAutomaton>, 	<Madd_n0430> in block <ConwayAutomaton>, 	<Madd_n0433> in block <ConwayAutomaton>, 	<Madd_n0436> in block <ConwayAutomaton>, 	<Madd_n0439> in block <ConwayAutomaton>, 	<Madd_n0442> in block <ConwayAutomaton>, 	<Madd_computearray[0][31]_computearray[7][31]_add_100_OUT> in block <ConwayAutomaton>.
-	Multiplier <Mmult_VPOS[6]_PWR_20_o_MuLt_110_OUT> in block <ConwayAutomaton> and adder/subtractor <Madd_n0416> in block <ConwayAutomaton> are combined into a MAC<Maddsub_VPOS[6]_PWR_20_o_MuLt_110_OUT>.
+	The following adders/subtractors are grouped into adder tree <Madd_computearray[0][31]_computearray[7][31]_add_101_OUT1> :
+ 	<Madd_n0436> in block <ConwayAutomaton>, 	<Madd_n0439> in block <ConwayAutomaton>, 	<Madd_n0442> in block <ConwayAutomaton>, 	<Madd_n0445> in block <ConwayAutomaton>, 	<Madd_n0448> in block <ConwayAutomaton>, 	<Madd_n0451> in block <ConwayAutomaton>, 	<Madd_computearray[0][31]_computearray[7][31]_add_101_OUT> in block <ConwayAutomaton>.
+	Multiplier <Mmult_VPOS[6]_PWR_20_o_MuLt_111_OUT> in block <ConwayAutomaton> and adder/subtractor <Madd_n0456> in block <ConwayAutomaton> are combined into a MAC<Maddsub_VPOS[6]_PWR_20_o_MuLt_111_OUT>.
+	The following registers are also absorbed by the MAC: <HPOS> in block <ConwayAutomaton>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
@@ -646,14 +636,14 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer> will be implemented on
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_0> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_0> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <n0281>         |          |
+    |     addrB          | connected to signal <n0284>         |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -663,13 +653,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer1> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_1> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_1> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <n0283>         |          |
+    |     addrB          | connected to signal <n0286>         |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer2> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -679,13 +669,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer2> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_2> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_2> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <GND_57_o_GND_57_o_sub_58_OUT> |          |
+    |     addrB          | connected to signal <BUS_0015_GND_57_o_sub_59_OUT> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer3> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -695,13 +685,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer3> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_3> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_3> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <GND_57_o_GND_57_o_sub_62_OUT> |          |
+    |     addrB          | connected to signal <BUS_0017_GND_57_o_sub_63_OUT> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer4> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -711,13 +701,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer4> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_4> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_4> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <n0289>         |          |
+    |     addrB          | connected to signal <n0292>         |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer5> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -727,13 +717,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer5> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_5> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_5> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <n0291>         |          |
+    |     addrB          | connected to signal <n0294>         |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer6> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -743,13 +733,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer6> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_6> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_6> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <GND_57_o_GND_57_o_sub_74_OUT> |          |
+    |     addrB          | connected to signal <BUS_0025_GND_57_o_sub_75_OUT> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer7> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
@@ -759,13 +749,13 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer7> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_260_o_0_7> | high     |
-    |     addrA          | connected to signal <n0416<12:0>>   |          |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_7> | high     |
+    |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
-    |     addrB          | connected to signal <GND_57_o_GND_57_o_sub_78_OUT> |          |
+    |     addrB          | connected to signal <BUS_0027_GND_57_o_sub_79_OUT> |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <ConwayAutomaton> synthesized (advanced).
@@ -773,7 +763,7 @@ Unit <ConwayAutomaton> synthesized (advanced).
 Synthesizing (advanced) Unit <ConwayInitializer>.
 The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
 The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
-	Multiplier <Mmult_VPOS[6]_PWR_18_o_MuLt_7_OUT> in block <ConwayInitializer> and adder/subtractor <Madd_n0157> in block <ConwayInitializer> are combined into a MAC<Maddsub_VPOS[6]_PWR_18_o_MuLt_7_OUT>.
+	Multiplier <Mmult_VPOS[6]_PWR_18_o_MuLt_7_OUT> in block <ConwayInitializer> and adder/subtractor <Madd_n0274> in block <ConwayInitializer> are combined into a MAC<Maddsub_VPOS[6]_PWR_18_o_MuLt_7_OUT>.
 Unit <ConwayInitializer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <Conway_Ram>.
@@ -860,48 +850,46 @@ Macro Statistics
  5121x8-bit single-port block RAM                      : 1
 # MACs                                                 : 5
  12x7-to-20-bit MAC                                    : 2
- 7x7-to-15-bit MAC                                     : 2
- 7x7-to-16-bit MAC                                     : 1
-# Adders/Subtractors                                   : 12
+ 7x7-to-15-bit MAC                                     : 1
+ 7x7-to-16-bit MAC                                     : 2
+# Adders/Subtractors                                   : 13
  13-bit adder                                          : 4
  13-bit subtractor                                     : 4
  17-bit subtractor                                     : 1
  4-bit subtractor                                      : 2
  7-bit adder                                           : 1
+ 8-bit adder                                           : 1
 # Adder Trees                                          : 1
  32-bit / 8-inputs adder tree                          : 1
-# Counters                                             : 11
+# Counters                                             : 10
  10-bit up counter                                     : 1
  11-bit up counter                                     : 2
  21-bit up counter                                     : 1
- 7-bit up counter                                      : 6
+ 7-bit up counter                                      : 5
  8-bit up counter                                      : 1
-# Registers                                            : 473
- Flip-Flops                                            : 473
+# Registers                                            : 481
+ Flip-Flops                                            : 481
 # Comparators                                          : 24
  10-bit comparator greater                             : 1
  11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
- 7-bit comparator greater                              : 5
+ 7-bit comparator greater                              : 3
  7-bit comparator lessequal                            : 4
- 8-bit comparator greater                              : 1
-# Multiplexers                                         : 96
- 1-bit 2-to-1 multiplexer                              : 93
+ 8-bit comparator greater                              : 3
+# Multiplexers                                         : 143
+ 1-bit 2-to-1 multiplexer                              : 138
  32-bit 2-to-1 multiplexer                             : 1
  7-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 4
-# Xors                                                 : 1
- 1-bit xor2                                            : 1
+# Xors                                                 : 2
+ 1-bit xor2                                            : 2
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:1710 - FF/Latch <value_out_signal_3> (without init value) has a constant value of 0 in block <IterationWriter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <value_out_signal_4> (without init value) has a constant value of 0 in block <IterationWriter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <framebuffer_data_out_3> (without init value) has a constant value of 0 in block <IterationWriter>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <framebuffer_data_out_4> (without init value) has a constant value of 0 in block <IterationWriter>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1426 - The value init of the FF/Latch computearray_0_31 hinder the constant cleaning in the block ConwayAutomaton.
    You should achieve better results by setting this init to 0.
 WARNING:Xst:1426 - The value init of the FF/Latch computearray_1_31 hinder the constant cleaning in the block ConwayAutomaton.
@@ -918,12 +906,36 @@ WARNING:Xst:1426 - The value init of the FF/Latch computearray_6_31 hinder the c
    You should achieve better results by setting this init to 0.
 WARNING:Xst:1426 - The value init of the FF/Latch computearray_7_31 hinder the constant cleaning in the block ConwayAutomaton.
    You should achieve better results by setting this init to 0.
-WARNING:Xst:1293 - FF/Latch <computearray_4_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <computearray_2_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -950,40 +962,10 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_23> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -1014,10 +996,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_27> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_0_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_3_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -1046,21 +1024,8 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_25> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_1_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -1078,23 +1043,19 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_14> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <signal_ram_address_31> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -1110,6 +1071,71 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_12> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_5_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_4_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
@@ -1120,74 +1146,20 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_27> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_2_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_21> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_22> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_23> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_24> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_25> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_26> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_27> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_7_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_1> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_2> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_3> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_20> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_19> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_18> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_17> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_16> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_15> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_14> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_13> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_12> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_11> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_10> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_9> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_8> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_7> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_6> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_5> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_4> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
 INFO:Xst:2261 - The FF/Latch <value_out_signal_0> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_7> 
+INFO:Xst:2261 - The FF/Latch <value_out_signal_1> in Unit <IterationWriter> is equivalent to the following 3 FFs/Latches, which will be removed : <value_out_signal_3> <value_out_signal_4> <value_out_signal_6> 
 INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_5> 
-INFO:Xst:2261 - The FF/Latch <value_out_signal_1> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_6> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_0> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_7> 
-INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_1> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_6> 
+INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_1> in Unit <IterationWriter> is equivalent to the following 3 FFs/Latches, which will be removed : <framebuffer_data_out_3> <framebuffer_data_out_4> <framebuffer_data_out_6> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_2> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_5> 
 INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <ConwayInitializer> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
-INFO:Xst:2261 - The FF/Latch <computearray_5_31> in Unit <ConwayAutomaton> is equivalent to the following 7 FFs/Latches, which will be removed : <computearray_7_31> <computearray_6_31> <computearray_2_31> <computearray_4_31> <computearray_3_31> <computearray_1_31> <computearray_0_31> 
-INFO:Xst:2261 - The FF/Latch <phase_write> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <signal_iterationWriter_inProgress> 
-INFO:Xst:2261 - The FF/Latch <phase_write> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <signal_iterationWriter_start> 
+INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_inProgress> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <phase_write> 
+INFO:Xst:2261 - The FF/Latch <computearray_5_31> in Unit <ConwayAutomaton> is equivalent to the following 7 FFs/Latches, which will be removed : <computearray_7_31> <computearray_6_31> <computearray_4_31> <computearray_3_31> <computearray_2_31> <computearray_1_31> <computearray_0_31> 
+INFO:Xst:2261 - The FF/Latch <signal_ram_address_15> in Unit <ConwayAutomaton> is equivalent to the following 16 FFs/Latches, which will be removed : <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
+INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_start> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <signal_iterationWriter_inProgress> 
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <XLXI_46/FSM_0> on signal <state[1:3]> with user encoding.
 --------------------------
@@ -1277,7 +1249,6 @@ WARNING:Xst:1294 - Latch <addrRam_1> is equivalent to a wire in block <MuxAddr32
 WARNING:Xst:1294 - Latch <addrRam_0> is equivalent to a wire in block <MuxAddr32>.
 
 Optimizing unit <M2_1_HXILINX_gesamt> ...
-WARNING:Xst:1710 - FF/Latch <XLXI_29/ram_data_output_3> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_4> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_5> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_29/ram_data_output_6> of sequential type is unconnected in block <gesamt>.
@@ -1295,6 +1266,7 @@ WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_16> of sequential type is un
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_15> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_14> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_13> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_15> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_14> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_13> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:1293 - FF/Latch <XLXI_27/VSCALE_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
@@ -1304,6 +1276,7 @@ WARNING:Xst:1293 - FF/Latch <XLXI_53/VPOS_6> has a constant value of 0 in block 
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_27/pixel_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_46/signal_framebuffer_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_46/framebuffer_addr_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <XLXI_29/ram_data_output_1> in Unit <gesamt> is equivalent to the following FF/Latch, which will be removed : <XLXI_29/ram_data_output_3> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
@@ -1315,8 +1288,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 222
- Flip-Flops                                            : 222
+# Registers                                            : 223
+ Flip-Flops                                            : 223
 
 =========================================================================
 
@@ -1339,26 +1312,26 @@ Top Level Output File Name         : gesamt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 904
+# BELS                             : 935
 #      BUF                         : 1
 #      GND                         : 1
-#      INV                         : 64
+#      INV                         : 63
 #      LUT1                        : 88
-#      LUT2                        : 35
-#      LUT3                        : 42
-#      LUT4                        : 45
-#      LUT5                        : 62
-#      LUT6                        : 248
+#      LUT2                        : 39
+#      LUT3                        : 50
+#      LUT4                        : 37
+#      LUT5                        : 76
+#      LUT6                        : 262
 #      MUXCY                       : 152
 #      MUXF7                       : 3
 #      VCC                         : 1
 #      XORCY                       : 162
-# FlipFlops/Latches                : 223
+# FlipFlops/Latches                : 224
 #      FD                          : 26
 #      FDE                         : 89
 #      FDR                         : 24
-#      FDRE                        : 82
-#      FDSE                        : 1
+#      FDRE                        : 81
+#      FDSE                        : 3
 #      ODDR2                       : 1
 # RAMS                             : 323
 #      RAM128X1D                   : 320
@@ -1381,17 +1354,17 @@ Selected Device : 6slx45fgg676-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             223  out of  54576     0%  
- Number of Slice LUTs:                 1864  out of  27288     6%  
-    Number used as Logic:               584  out of  27288     2%  
+ Number of Slice Registers:             224  out of  54576     0%  
+ Number of Slice LUTs:                 1895  out of  27288     6%  
+    Number used as Logic:               615  out of  27288     2%  
     Number used as Memory:             1280  out of   6408    19%  
        Number used as RAM:             1280
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1961
-   Number with an unused Flip Flop:    1738  out of   1961    88%  
-   Number with an unused LUT:            97  out of   1961     4%  
-   Number of fully used LUT-FF pairs:   126  out of   1961     6%  
+ Number of LUT Flip Flop pairs used:   1997
+   Number with an unused Flip Flop:    1773  out of   1997    88%  
+   Number with an unused LUT:           102  out of   1997     5%  
+   Number of fully used LUT-FF pairs:   122  out of   1997     6%  
    Number of unique control sets:        36
 
 IO Utilization: 
@@ -1425,7 +1398,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk_in                             | DCM_SP:CLKFX           | 552   |
+clk_in                             | DCM_SP:CLKFX           | 553   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -1448,24 +1421,24 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_in'
   Clock period: 42.505ns (frequency: 23.527MHz)
-  Total number of paths / destination ports: 17444 / 3502
+  Total number of paths / destination ports: 18164 / 3515
 -------------------------------------------------------------------------
 Delay:               9.446ns (Levels of Logic = 5)
-  Source:            XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_110_OUT (DSP)
+  Source:            XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_111_OUT (DSP)
   Destination:       XLXI_53/computearray_3_0 (FF)
   Source Clock:      clk_in rising 4.5X
   Destination Clock: clk_in rising 4.5X
 
-  Data Path: XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_110_OUT to XLXI_53/computearray_3_0
+  Data Path: XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_111_OUT to XLXI_53/computearray_3_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     DSP48A1:CLK->P4     341   3.113   2.179  XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_110_OUT (XLXI_53/Madd_n0289_Madd_cy<4>)
-     LUT2:I0->O            2   0.203   0.617  XLXI_53/Msub_GND_57_o_GND_57_o_sub_62_OUT<12:0>_xor<11>121 (XLXI_53/Msub_GND_57_o_GND_57_o_sub_62_OUT<12:0>_xor<11>12)
-     LUT6:I5->O            8   0.205   0.907  XLXI_53/Msub_GND_57_o_GND_57_o_sub_62_OUT<12:0>_xor<10>11 (XLXI_53/GND_57_o_GND_57_o_sub_62_OUT<10>)
-     LUT6:I4->O            1   0.203   0.827  XLXI_53/inst_LPM_MUX4_122 (XLXI_53/inst_LPM_MUX4_122)
-     LUT6:I2->O            1   0.203   0.684  XLXI_53/inst_LPM_MUX4_7 (XLXI_53/inst_LPM_MUX4_7)
-     LUT6:I4->O            1   0.203   0.000  XLXI_53/GND_57_o_GND_57_o_sub_62_OUT<12> (XLXI_53/GND_57_o_read_port_62_OUT<0>)
+     DSP48A1:CLK->P4     341   3.113   2.179  XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_111_OUT (XLXI_53/Madd_n0292_Madd_cy<4>)
+     LUT2:I0->O            2   0.203   0.617  XLXI_53/Msub_BUS_0017_GND_57_o_sub_63_OUT<12:0>_xor<11>121 (XLXI_53/Msub_BUS_0017_GND_57_o_sub_63_OUT<12:0>_xor<11>12)
+     LUT6:I5->O            8   0.205   0.907  XLXI_53/Msub_BUS_0017_GND_57_o_sub_63_OUT<12:0>_xor<10>11 (XLXI_53/BUS_0017_GND_57_o_sub_63_OUT<10>)
+     LUT6:I4->O            1   0.203   0.827  XLXI_53/inst_LPM_MUX5_122 (XLXI_53/inst_LPM_MUX5_122)
+     LUT6:I2->O            1   0.203   0.684  XLXI_53/inst_LPM_MUX5_7 (XLXI_53/inst_LPM_MUX5_7)
+     LUT6:I4->O            1   0.203   0.000  XLXI_53/BUS_0017_GND_57_o_sub_63_OUT<12> (XLXI_53/BUS_0017_read_port_63_OUT<0>)
      FDE:D                     0.102          XLXI_53/computearray_3_0
     ----------------------------------------
     Total                      9.446ns (4.232ns logic, 5.214ns route)
@@ -1506,14 +1479,14 @@ clk_in         |    9.446|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 19.42 secs
+Total REAL time to Xst completion: 42.00 secs
+Total CPU time to Xst completion: 41.32 secs
  
 --> 
 
-Total memory usage is 214472 kilobytes
+Total memory usage is 246600 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  454 (   0 filtered)
-Number of infos    :   43 (   0 filtered)
+Number of warnings :  429 (   0 filtered)
+Number of infos    :   37 (   0 filtered)
 
