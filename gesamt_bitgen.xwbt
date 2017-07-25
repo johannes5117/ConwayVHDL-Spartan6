@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\AdvancedEmbedded\EndProj\gesamt.ncd
-OUTFILE=C:\AdvancedEmbedded\EndProj\gesamt.bit
-FAMILY=Spartan6
-PART=xc6slx45-3fgg676
-WORKINGDIR=C:\AdvancedEmbedded\EndProj
-LICENSE=WebPack
-USER_INFO=211349906_0_0_410
