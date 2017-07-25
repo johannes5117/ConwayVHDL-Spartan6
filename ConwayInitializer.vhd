@@ -32,6 +32,7 @@ use IEEE.numeric_std.All;
 
 entity ConwayInitializer is
     Port ( clk : in  STD_LOGIC;
+			  reset : in STD_LOGIC;
            ram_addr : out std_logic_vector(31 downto 0);
            ram_we : out  STD_LOGIC;
            ram_data : out  STD_LOGIC;
@@ -50,7 +51,12 @@ begin
 PROCESS(clk)
 BEGIN
 
-	if(rising_edge(clk) and signal_init_running='1' ) then
+	if(rising_edge(clk)) then
+		if(reset ='0')then
+			signal_init_running <= '1';
+			HPOS <= -1;
+			VPOS <= 0;
+		elsif( signal_init_running='1' ) then
 	  if(divider='0' and divider_two ='0') then
 		IF(HPOS<79)THEN
 			HPOS<=HPOS+1;
@@ -227,7 +233,7 @@ elsif(HPOS=78 and VPOS=61) then
 			divider<='0';
 			divider_two <='0';
 		end if; 
-		
+		end if;
 	end if;
 	ram_addr <= signal_ram_address;
 	ram_data <= signal_data;

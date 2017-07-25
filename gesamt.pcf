@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Tue Jul 25 16:48:14 2017
+// Written by: Map P.20131013 on Tue Jul 25 18:09:13 2017
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -12,6 +12,7 @@ COMP "blue<4>" LOCATE = SITE "C18" LEVEL 1;
 COMP "blue<5>" LOCATE = SITE "K18" LEVEL 1;
 COMP "blue<6>" LOCATE = SITE "C19" LEVEL 1;
 COMP "blue<7>" LOCATE = SITE "C20" LEVEL 1;
+COMP "reset" LOCATE = SITE "AC24" LEVEL 1;
 COMP "clk_in" LOCATE = SITE "M21" LEVEL 1;
 COMP "red<0>" LOCATE = SITE "B4" LEVEL 1;
 COMP "red<1>" LOCATE = SITE "A4" LEVEL 1;

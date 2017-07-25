@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : gesamt.vhf
--- /___/   /\     Timestamp : 07/23/2017 18:16:48
+-- /___/   /\     Timestamp : 07/25/2017 18:00:37
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -54,6 +54,7 @@ use UNISIM.Vcomponents.ALL;
 
 entity gesamt is
    port ( clk_in      : in    std_logic; 
+          reset       : in    std_logic; 
           blue        : out   std_logic_vector (7 downto 0); 
           clk_monitor : out   std_logic; 
           green       : out   std_logic_vector (7 downto 0); 
@@ -233,7 +234,8 @@ architecture BEHAVIORAL of gesamt is
              ram_we               : out   std_logic; 
              ram_data             : out   std_logic; 
              conwayAutomaton_init : out   std_logic; 
-             ram_addr             : out   std_logic_vector (31 downto 0));
+             ram_addr             : out   std_logic_vector (31 downto 0); 
+             reset                : in    std_logic);
    end component;
    
    component ConwayAutomaton
@@ -350,6 +352,7 @@ begin
    
    XLXI_51 : ConwayInitializer
       port map (clk=>XLXN_209,
+                reset=>reset,
                 conwayAutomaton_init=>XLXN_241,
                 ram_addr(31 downto 0)=>XLXN_220(31 downto 0),
                 ram_data=>XLXN_236,

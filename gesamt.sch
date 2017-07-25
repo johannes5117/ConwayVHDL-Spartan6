@@ -45,8 +45,8 @@
         <signal name="XLXN_238" />
         <signal name="XLXN_223" />
         <signal name="XLXN_241" />
-        <signal name="XLXN_242" />
         <signal name="XLXN_243" />
+        <signal name="reset" />
         <port polarity="Input" name="clk_in" />
         <port polarity="Output" name="clk_monitor" />
         <port polarity="Output" name="sync_hor" />
@@ -54,6 +54,7 @@
         <port polarity="Output" name="red(7:0)" />
         <port polarity="Output" name="blue(7:0)" />
         <port polarity="Output" name="green(7:0)" />
+        <port polarity="Input" name="reset" />
         <blockdef name="clk_wiz_v3_6">
             <timestamp>2017-7-3T19:4:17</timestamp>
             <rect width="256" x="64" y="-64" height="64" />
@@ -220,14 +221,15 @@
             <line x2="96" y1="-160" y2="-160" x1="0" />
         </blockdef>
         <blockdef name="ConwayInitializer">
-            <timestamp>2017-7-15T11:31:35</timestamp>
+            <timestamp>2017-7-25T15:58:26</timestamp>
+            <line x2="0" y1="96" y2="96" x1="64" />
             <rect width="64" x="320" y="20" height="24" />
             <line x2="384" y1="32" y2="32" x1="320" />
             <line x2="0" y1="-224" y2="-224" x1="64" />
             <line x2="384" y1="-160" y2="-160" x1="320" />
             <line x2="384" y1="-96" y2="-96" x1="320" />
             <line x2="384" y1="-32" y2="-32" x1="320" />
-            <rect width="256" x="64" y="-256" height="320" />
+            <rect width="256" x="64" y="-256" height="384" />
         </blockdef>
         <blockdef name="ConwayAutomaton">
             <timestamp>2017-7-20T16:28:4</timestamp>
@@ -346,6 +348,7 @@
             <blockpin signalname="XLXN_236" name="ram_data" />
             <blockpin signalname="XLXN_241" name="conwayAutomaton_init" />
             <blockpin signalname="XLXN_220(31:0)" name="ram_addr(31:0)" />
+            <blockpin signalname="reset" name="reset" />
         </block>
         <block symbolname="m2_1" name="XLXI_54">
             <blockpin signalname="XLXN_235" name="D0" />
@@ -656,5 +659,9 @@
             <wire x2="1760" y1="1936" y2="1936" x1="1232" />
             <wire x2="1232" y1="1936" y2="2768" x1="1232" />
         </branch>
+        <branch name="reset">
+            <wire x2="576" y1="3360" y2="3360" x1="544" />
+        </branch>
+        <iomarker fontsize="28" x="544" y="3360" name="reset" orien="R180" />
     </sheet>
 </drawing>

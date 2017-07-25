@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.28 secs
+Total CPU time to Xst completion: 0.31 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.28 secs
+Total CPU time to Xst completion: 0.31 secs
  
 --> Reading design: gesamt.prj
 
@@ -162,10 +162,9 @@ Elaborating entity <M2_1_HXILINX_gesamt> (architecture <M2_1_HXILINX_gesamt_V>) 
 INFO:HDLCompiler:679 - "C:\AdvancedEmbedded\EndProj\gesamt.vhf" Line 44. Case statement is complete. others clause is never selected
 
 Elaborating entity <ConwayInitializer> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 53: signal_init_running should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 232: signal_ram_address should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 233: signal_data should be on the sensitivity list of the process
-WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 235: signal_init_running should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 238: signal_ram_address should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 239: signal_data should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd" Line 241: signal_init_running should be on the sensitivity list of the process
 
 Elaborating entity <ConwayAutomaton> (architecture <Behavioral>) from library <work>.
 WARNING:HDLCompiler:92 - "C:\AdvancedEmbedded\EndProj\ConwayAutomaton.vhd" Line 75: initmodule_init should be on the sensitivity list of the process
@@ -372,26 +371,26 @@ Unit <M2_1_HXILINX_gesamt> synthesized.
 
 Synthesizing Unit <ConwayInitializer>.
     Related source file is "C:\AdvancedEmbedded\EndProj\ConwayInitializer.vhd".
+    Found 8-bit register for signal <HPOS>.
     Found 7-bit register for signal <VPOS>.
-    Found 1-bit register for signal <signal_init_running>.
     Found 1-bit register for signal <divider>.
     Found 32-bit register for signal <signal_ram_address>.
     Found 1-bit register for signal <signal_data>.
     Found 1-bit register for signal <divider_two>.
-    Found 8-bit register for signal <HPOS>.
-    Found 17-bit subtractor for signal <BUS_0003_GND_56_o_sub_10_OUT> created at line 70.
-    Found 8-bit adder for signal <HPOS[7]_GND_56_o_add_1_OUT> created at line 56.
-    Found 7-bit adder for signal <VPOS[6]_GND_56_o_add_3_OUT> created at line 60.
-    Found 16-bit adder for signal <n0274> created at line 70.
-    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_18_o_MuLt_7_OUT> created at line 70.
-    Found 8-bit comparator greater for signal <GND_56_o_HPOS[7]_LessThan_1_o> created at line 55
-    Found 7-bit comparator lessequal for signal <VPOS[6]_GND_56_o_LessThan_3_o> created at line 59
+    Found 1-bit register for signal <signal_init_running>.
+    Found 17-bit subtractor for signal <BUS_0003_GND_56_o_sub_10_OUT> created at line 76.
+    Found 8-bit adder for signal <HPOS[7]_GND_56_o_add_1_OUT> created at line 62.
+    Found 7-bit adder for signal <VPOS[6]_GND_56_o_add_3_OUT> created at line 66.
+    Found 16-bit adder for signal <n0285> created at line 76.
+    Found 7x7-bit multiplier for signal <VPOS[6]_PWR_18_o_MuLt_7_OUT> created at line 76.
+    Found 8-bit comparator greater for signal <GND_56_o_HPOS[7]_LessThan_1_o> created at line 61
+    Found 7-bit comparator greater for signal <VPOS[6]_GND_56_o_LessThan_3_o> created at line 65
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   4 Adder/Subtractor(s).
 	inferred  51 D-type flip-flop(s).
 	inferred   2 Comparator(s).
-	inferred  73 Multiplexer(s).
+	inferred  74 Multiplexer(s).
 Unit <ConwayInitializer> synthesized.
 
 Synthesizing Unit <ConwayAutomaton>.
@@ -531,14 +530,14 @@ Macro Statistics
  10-bit comparator greater                             : 1
  11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
- 7-bit comparator greater                              : 3
- 7-bit comparator lessequal                            : 4
+ 7-bit comparator greater                              : 4
+ 7-bit comparator lessequal                            : 3
  8-bit comparator greater                              : 3
-# Multiplexers                                         : 149
+# Multiplexers                                         : 150
  1-bit 2-to-1 multiplexer                              : 142
  10-bit 2-to-1 multiplexer                             : 1
  32-bit 2-to-1 multiplexer                             : 1
- 7-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 3
  8-bit 2-to-1 multiplexer                              : 3
 # FSMs                                                 : 4
 # Xors                                                 : 2
@@ -550,6 +549,7 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <XLXI_51> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
 INFO:Xst:2261 - The FF/Latch <pixel_y_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_y_8> <pixel_y_9> <pixel_y_10> <pixel_y_11> 
@@ -557,7 +557,6 @@ INFO:Xst:2261 - The FF/Latch <pixel_x_7> in Unit <XLXI_27> is equivalent to the 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
 INFO:Xst:2261 - The FF/Latch <signal_framebuffer_x_7> in Unit <XLXI_46> is equivalent to the following 26 FFs/Latches, which will be removed : <signal_framebuffer_x_8> <signal_framebuffer_x_9> <signal_framebuffer_x_10> <signal_framebuffer_x_11> <signal_framebuffer_y_7> <signal_framebuffer_y_8> <signal_framebuffer_y_9> <signal_framebuffer_y_10> <signal_framebuffer_y_11> <signal_ram_address_15> <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_addr_y_7> in Unit <XLXI_46> is equivalent to the following 26 FFs/Latches, which will be removed : <framebuffer_addr_y_8> <framebuffer_addr_y_9> <framebuffer_addr_y_10> <framebuffer_addr_y_11> <framebuffer_addr_x_7> <framebuffer_addr_x_8> <framebuffer_addr_x_9> <framebuffer_addr_x_10> <framebuffer_addr_x_11> <ram_addr_15> <ram_addr_16> <ram_addr_17> <ram_addr_18> <ram_addr_19> <ram_addr_20> <ram_addr_21> <ram_addr_22> <ram_addr_23> <ram_addr_24> <ram_addr_25> <ram_addr_26> <ram_addr_27> <ram_addr_28> <ram_addr_29> <ram_addr_30> <ram_addr_31> 
-INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <XLXI_51> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_inProgress> in Unit <XLXI_53> is equivalent to the following FF/Latch, which will be removed : <phase_write> 
 INFO:Xst:2261 - The FF/Latch <signal_ram_address_15> in Unit <XLXI_53> is equivalent to the following 16 FFs/Latches, which will be removed : <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <computearray_7_1> in Unit <XLXI_53> is equivalent to the following 239 FFs/Latches, which will be removed : <computearray_7_2> <computearray_7_3> <computearray_7_4> <computearray_7_5> <computearray_7_6> <computearray_7_7> <computearray_7_8> <computearray_7_9> <computearray_7_10> <computearray_7_11> <computearray_7_12> <computearray_7_13> <computearray_7_14> <computearray_7_15> <computearray_7_16> <computearray_7_17> <computearray_7_18> <computearray_7_19> <computearray_7_20> <computearray_7_21> <computearray_7_22> <computearray_7_23> <computearray_7_24> <computearray_7_25> <computearray_7_26> <computearray_7_27> <computearray_7_28> <computearray_7_29> <computearray_7_30> <computearray_6_1> <computearray_6_2> <computearray_6_3> <computearray_6_4> <computearray_6_5> <computearray_6_6> <computearray_6_7> <computearray_6_8> <computearray_6_9> <computearray_6_10> <computearray_6_11> <computearray_6_12> <computearray_6_13> <computearray_6_14> <computearray_6_15> <computearray_6_16>
@@ -573,6 +572,10 @@ WARNING:Xst:1710 - FF/Latch <pixel_y_7> (without init value) has a constant valu
 WARNING:Xst:1710 - FF/Latch <signal_framebuffer_x_7> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <computearray_7_1> has a constant value of 0 in block <XLXI_53>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <framebuffer_addr_y_7> (without init value) has a constant value of 0 in block <XLXI_46>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <signal_ram_address_13> of sequential type is unconnected in block <XLXI_51>.
+WARNING:Xst:2677 - Node <signal_ram_address_14> of sequential type is unconnected in block <XLXI_51>.
+WARNING:Xst:2677 - Node <signal_ram_address_15> of sequential type is unconnected in block <XLXI_51>.
+WARNING:Xst:2677 - Node <signal_ram_address_16> of sequential type is unconnected in block <XLXI_51>.
 WARNING:Xst:2677 - Node <value_out_3> of sequential type is unconnected in block <XLXI_29>.
 WARNING:Xst:2677 - Node <value_out_4> of sequential type is unconnected in block <XLXI_29>.
 WARNING:Xst:2677 - Node <value_out_5> of sequential type is unconnected in block <XLXI_29>.
@@ -606,10 +609,6 @@ WARNING:Xst:2677 - Node <signal_ram_address_13> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <signal_ram_address_14> of sequential type is unconnected in block <XLXI_46>.
 WARNING:Xst:2677 - Node <ram_addr_13> of sequential type is unconnected in block <XLXI_46>.
 WARNING:Xst:2677 - Node <ram_addr_14> of sequential type is unconnected in block <XLXI_46>.
-WARNING:Xst:2677 - Node <signal_ram_address_13> of sequential type is unconnected in block <XLXI_51>.
-WARNING:Xst:2677 - Node <signal_ram_address_14> of sequential type is unconnected in block <XLXI_51>.
-WARNING:Xst:2677 - Node <signal_ram_address_15> of sequential type is unconnected in block <XLXI_51>.
-WARNING:Xst:2677 - Node <signal_ram_address_16> of sequential type is unconnected in block <XLXI_51>.
 WARNING:Xst:2677 - Node <signal_ram_address_13> of sequential type is unconnected in block <XLXI_53>.
 WARNING:Xst:2677 - Node <signal_ram_address_14> of sequential type is unconnected in block <XLXI_53>.
 WARNING:Xst:2677 - Node <signal_ram_address_15> of sequential type is unconnected in block <XLXI_53>.
@@ -636,7 +635,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer> will be implemented on
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_0> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_0> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     |     doA            | connected to internal node          |          |
@@ -653,7 +652,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer1> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_1> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_1> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -669,7 +668,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer2> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_2> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_2> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -685,7 +684,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer3> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_3> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_3> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -701,7 +700,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer4> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_4> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_4> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -717,7 +716,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer5> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_5> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_5> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -733,7 +732,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer6> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_6> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_6> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -749,7 +748,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_conwaybuffer7> will be implemented o
     | Port A                                                              |
     |     aspect ratio   | 5120-word x 1-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
-    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_305_o_0_7> | high     |
+    |     weA            | connected to signal <PWR_20_o_GND_57_o_MUX_309_o_0_7> | high     |
     |     addrA          | connected to signal <n0456<12:0>>   |          |
     |     diA            | connected to signal <ram_data_in>   |          |
     -----------------------------------------------------------------------
@@ -763,7 +762,7 @@ Unit <ConwayAutomaton> synthesized (advanced).
 Synthesizing (advanced) Unit <ConwayInitializer>.
 The following registers are absorbed into counter <VPOS>: 1 register on signal <VPOS>.
 The following registers are absorbed into counter <HPOS>: 1 register on signal <HPOS>.
-	Multiplier <Mmult_VPOS[6]_PWR_18_o_MuLt_7_OUT> in block <ConwayInitializer> and adder/subtractor <Madd_n0274> in block <ConwayInitializer> are combined into a MAC<Maddsub_VPOS[6]_PWR_18_o_MuLt_7_OUT>.
+	Multiplier <Mmult_VPOS[6]_PWR_18_o_MuLt_7_OUT> in block <ConwayInitializer> and adder/subtractor <Madd_n0285> in block <ConwayInitializer> are combined into a MAC<Maddsub_VPOS[6]_PWR_18_o_MuLt_7_OUT>.
 Unit <ConwayInitializer> synthesized (advanced).
 
 Synthesizing (advanced) Unit <Conway_Ram>.
@@ -873,8 +872,8 @@ Macro Statistics
  10-bit comparator greater                             : 1
  11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
- 7-bit comparator greater                              : 3
- 7-bit comparator lessequal                            : 4
+ 7-bit comparator greater                              : 4
+ 7-bit comparator lessequal                            : 3
  8-bit comparator greater                              : 3
 # Multiplexers                                         : 143
  1-bit 2-to-1 multiplexer                              : 138
@@ -1146,6 +1145,7 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_27> 
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_28> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_29> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <computearray_6_30> has a constant value of 0 in block <ConwayAutomaton>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <ConwayInitializer> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
 INFO:Xst:2261 - The FF/Latch <red_0> in Unit <VGA_Controller> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
@@ -1155,9 +1155,8 @@ INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <IterationWriter> is e
 INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_0> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_7> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_1> in Unit <IterationWriter> is equivalent to the following 3 FFs/Latches, which will be removed : <framebuffer_data_out_3> <framebuffer_data_out_4> <framebuffer_data_out_6> 
 INFO:Xst:2261 - The FF/Latch <framebuffer_data_out_2> in Unit <IterationWriter> is equivalent to the following FF/Latch, which will be removed : <framebuffer_data_out_5> 
-INFO:Xst:2261 - The FF/Latch <signal_ram_address_16> in Unit <ConwayInitializer> is equivalent to the following 15 FFs/Latches, which will be removed : <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
-INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_inProgress> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <phase_write> 
 INFO:Xst:2261 - The FF/Latch <computearray_5_31> in Unit <ConwayAutomaton> is equivalent to the following 7 FFs/Latches, which will be removed : <computearray_7_31> <computearray_6_31> <computearray_4_31> <computearray_3_31> <computearray_2_31> <computearray_1_31> <computearray_0_31> 
+INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_inProgress> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <phase_write> 
 INFO:Xst:2261 - The FF/Latch <signal_ram_address_15> in Unit <ConwayAutomaton> is equivalent to the following 16 FFs/Latches, which will be removed : <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <signal_iterationWriter_start> in Unit <ConwayAutomaton> is equivalent to the following FF/Latch, which will be removed : <signal_iterationWriter_inProgress> 
 Analyzing FSM <MFsm> for best encoding.
@@ -1206,11 +1205,12 @@ WARNING:Xst:2677 - Node <computearray_5_31> of sequential type is unconnected in
 
 Optimizing unit <gesamt> ...
 
+Optimizing unit <ConwayInitializer> ...
+WARNING:Xst:1293 - FF/Latch <VPOS_6> has a constant value of 0 in block <ConwayInitializer>. This FF/Latch will be trimmed during the optimization process.
+
 Optimizing unit <VGA_Controller> ...
 
 Optimizing unit <IterationWriter> ...
-
-Optimizing unit <ConwayInitializer> ...
 
 Optimizing unit <ConwayAutomaton> ...
 
@@ -1260,18 +1260,17 @@ WARNING:Xst:2677 - Node <XLXI_29/value_out_6> of sequential type is unconnected 
 WARNING:Xst:2677 - Node <XLXI_29/value_out_7> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_30/Mram_ram3> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_30/Mram_ram4> of sequential type is unconnected in block <gesamt>.
-WARNING:Xst:2677 - Node <XLXI_46/ram_addr_14> of sequential type is unconnected in block <gesamt>.
-WARNING:Xst:2677 - Node <XLXI_46/ram_addr_13> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_16> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_15> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_14> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_51/signal_ram_address_13> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_46/ram_addr_14> of sequential type is unconnected in block <gesamt>.
+WARNING:Xst:2677 - Node <XLXI_46/ram_addr_13> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_15> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_14> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:2677 - Node <XLXI_53/signal_ram_address_13> of sequential type is unconnected in block <gesamt>.
 WARNING:Xst:1293 - FF/Latch <XLXI_27/VSCALE_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <XLXI_46/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <XLXI_51/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <XLXI_53/VPOS_6> has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_27/pixel_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <XLXI_46/signal_framebuffer_y_6> (without init value) has a constant value of 0 in block <gesamt>. This FF/Latch will be trimmed during the optimization process.
@@ -1312,25 +1311,25 @@ Top Level Output File Name         : gesamt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 935
+# BELS                             : 943
 #      BUF                         : 1
 #      GND                         : 1
-#      INV                         : 63
+#      INV                         : 64
 #      LUT1                        : 88
-#      LUT2                        : 39
-#      LUT3                        : 50
-#      LUT4                        : 37
-#      LUT5                        : 76
-#      LUT6                        : 262
+#      LUT2                        : 37
+#      LUT3                        : 54
+#      LUT4                        : 41
+#      LUT5                        : 83
+#      LUT6                        : 256
 #      MUXCY                       : 152
 #      MUXF7                       : 3
 #      VCC                         : 1
 #      XORCY                       : 162
 # FlipFlops/Latches                : 224
-#      FD                          : 26
-#      FDE                         : 89
-#      FDR                         : 24
-#      FDRE                        : 81
+#      FD                          : 35
+#      FDE                         : 80
+#      FDR                         : 23
+#      FDRE                        : 82
 #      FDSE                        : 3
 #      ODDR2                       : 1
 # RAMS                             : 323
@@ -1339,7 +1338,8 @@ Primitive and Black Box Usage:
 #      RAMB8BWER                   : 1
 # Clock Buffers                    : 1
 #      BUFG                        : 1
-# IO Buffers                       : 28
+# IO Buffers                       : 29
+#      IBUF                        : 1
 #      IBUFG                       : 1
 #      OBUF                        : 27
 # DCMs                             : 1
@@ -1355,21 +1355,21 @@ Selected Device : 6slx45fgg676-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             224  out of  54576     0%  
- Number of Slice LUTs:                 1895  out of  27288     6%  
-    Number used as Logic:               615  out of  27288     2%  
+ Number of Slice LUTs:                 1903  out of  27288     6%  
+    Number used as Logic:               623  out of  27288     2%  
     Number used as Memory:             1280  out of   6408    19%  
        Number used as RAM:             1280
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1997
-   Number with an unused Flip Flop:    1773  out of   1997    88%  
-   Number with an unused LUT:           102  out of   1997     5%  
-   Number of fully used LUT-FF pairs:   122  out of   1997     6%  
-   Number of unique control sets:        36
+ Number of LUT Flip Flop pairs used:   2002
+   Number with an unused Flip Flop:    1778  out of   2002    88%  
+   Number with an unused LUT:            99  out of   2002     4%  
+   Number of fully used LUT-FF pairs:   125  out of   2002     6%  
+   Number of unique control sets:        35
 
 IO Utilization: 
- Number of IOs:                          28
- Number of bonded IOBs:                  28  out of    358     7%  
+ Number of IOs:                          29
+ Number of bonded IOBs:                  29  out of    358     8%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:                3  out of    116     2%  
@@ -1410,7 +1410,7 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 42.505ns (Maximum Frequency: 23.527MHz)
-   Minimum input arrival time before clock: No path found
+   Minimum input arrival time before clock: 4.130ns
    Maximum output required time after clock: 3.820ns
    Maximum combinational path delay: No path found
 
@@ -1421,7 +1421,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_in'
   Clock period: 42.505ns (frequency: 23.527MHz)
-  Total number of paths / destination ports: 18164 / 3515
+  Total number of paths / destination ports: 18086 / 3499
 -------------------------------------------------------------------------
 Delay:               9.446ns (Levels of Logic = 5)
   Source:            XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_111_OUT (DSP)
@@ -1443,6 +1443,27 @@ Delay:               9.446ns (Levels of Logic = 5)
     ----------------------------------------
     Total                      9.446ns (4.232ns logic, 5.214ns route)
                                        (44.8% logic, 55.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_in'
+  Total number of paths / destination ports: 34 / 33
+-------------------------------------------------------------------------
+Offset:              4.130ns (Levels of Logic = 3)
+  Source:            reset (PAD)
+  Destination:       XLXI_51/signal_data (FF)
+  Destination Clock: clk_in rising 4.5X
+
+  Data Path: reset to XLXI_51/signal_data
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            15   1.222   1.210  reset_IBUF (reset_IBUF)
+     LUT4:I1->O           14   0.205   1.186  XLXI_51/_n0324_inv1 (XLXI_51/_n0324_inv)
+     LUT6:I3->O            1   0.205   0.000  XLXI_51/signal_data_glue_set (XLXI_51/signal_data_glue_set)
+     FD:D                      0.102          XLXI_51/signal_data
+    ----------------------------------------
+    Total                      4.130ns (1.734ns logic, 2.396ns route)
+                                       (42.0% logic, 58.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_in'
@@ -1479,14 +1500,14 @@ clk_in         |    9.446|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 42.00 secs
-Total CPU time to Xst completion: 41.32 secs
+Total REAL time to Xst completion: 46.00 secs
+Total CPU time to Xst completion: 45.99 secs
  
 --> 
 
-Total memory usage is 246600 kilobytes
+Total memory usage is 246920 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  429 (   0 filtered)
+Number of warnings :  428 (   0 filtered)
 Number of infos    :   37 (   0 filtered)
 
