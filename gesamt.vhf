@@ -7,7 +7,7 @@
 -- \   \   \/     Version : 14.7
 --  \   \         Application : sch2hdl
 --  /   /         Filename : gesamt.vhf
--- /___/   /\     Timestamp : 07/25/2017 18:00:37
+-- /___/   /\     Timestamp : 07/25/2017 18:45:56
 -- \   \  /  \ 
 --  \___\/\___\ 
 --
@@ -76,9 +76,7 @@ architecture BEHAVIORAL of gesamt is
    signal XLXN_63     : std_logic;
    signal XLXN_68     : std_logic_vector (11 downto 0);
    signal XLXN_69     : std_logic_vector (11 downto 0);
-   signal XLXN_78     : std_logic_vector (31 downto 0);
    signal XLXN_85     : std_logic;
-   signal XLXN_94     : std_logic_vector (7 downto 0);
    signal XLXN_95     : std_logic_vector (7 downto 0);
    signal XLXN_96     : std_logic_vector (7 downto 0);
    signal XLXN_192    : std_logic;
@@ -102,6 +100,8 @@ architecture BEHAVIORAL of gesamt is
    signal XLXN_238    : std_logic;
    signal XLXN_241    : std_logic;
    signal XLXN_243    : std_logic;
+   signal XLXN_255    : std_logic_vector (7 downto 0);
+   signal XLXN_256    : std_logic_vector (31 downto 0);
    component clk_wiz_v3_6
       port ( CLK_IN1  : in    std_logic; 
              CLK_OUT1 : out   std_logic);
@@ -149,19 +149,6 @@ architecture BEHAVIORAL of gesamt is
    end component;
    attribute BOX_TYPE of VCC : component is "BLACK_BOX";
    
-   component VGA_Controller
-      port ( clk_108   : in    std_logic; 
-             data_in   : in    std_logic_vector (7 downto 0); 
-             sync_hor  : out   std_logic; 
-             sync_vert : out   std_logic; 
-             mutex     : out   std_logic; 
-             pixel_x   : out   std_logic_vector (11 downto 0); 
-             pixel_y   : out   std_logic_vector (11 downto 0); 
-             red       : out   std_logic_vector (7 downto 0); 
-             blue      : out   std_logic_vector (7 downto 0); 
-             green     : out   std_logic_vector (7 downto 0));
-   end component;
-   
    component Framebuffer
       port ( clk             : in    std_logic; 
              vga_mutex       : in    std_logic; 
@@ -177,14 +164,6 @@ architecture BEHAVIORAL of gesamt is
              value_out       : out   std_logic_vector (7 downto 0); 
              ram_address     : out   std_logic_vector (31 downto 0); 
              ram_data_output : out   std_logic_vector (7 downto 0));
-   end component;
-   
-   component internal_ram
-      port ( clk         : in    std_logic; 
-             we          : in    std_logic; 
-             address     : in    std_logic_vector (31 downto 0); 
-             data_input  : in    std_logic_vector (7 downto 0); 
-             data_output : out   std_logic_vector (7 downto 0));
    end component;
    
    component IterationWriter
@@ -203,14 +182,6 @@ architecture BEHAVIORAL of gesamt is
              framebuffer_addr_y           : out   std_logic_vector (11 downto 
             0); 
              engine_iteration_in_progress : in    std_logic);
-   end component;
-   
-   component Conway_Ram
-      port ( clk         : in    std_logic; 
-             we          : in    std_logic; 
-             data_input  : in    std_logic; 
-             data_output : out   std_logic; 
-             address     : in    std_logic_vector (31 downto 0));
    end component;
    
    component MuxAddr32
@@ -250,6 +221,35 @@ architecture BEHAVIORAL of gesamt is
              iterationWriter_inProgress : out   std_logic);
    end component;
    
+   component VideoRam
+      port ( clk         : in    std_logic; 
+             we          : in    std_logic; 
+             address     : in    std_logic_vector (31 downto 0); 
+             data_input  : in    std_logic_vector (7 downto 0); 
+             data_output : out   std_logic_vector (7 downto 0));
+   end component;
+   
+   component VgaController
+      port ( clk_108   : in    std_logic; 
+             data_in   : in    std_logic_vector (7 downto 0); 
+             sync_hor  : out   std_logic; 
+             sync_vert : out   std_logic; 
+             mutex     : out   std_logic; 
+             pixel_x   : out   std_logic_vector (11 downto 0); 
+             pixel_y   : out   std_logic_vector (11 downto 0); 
+             red       : out   std_logic_vector (7 downto 0); 
+             blue      : out   std_logic_vector (7 downto 0); 
+             green     : out   std_logic_vector (7 downto 0));
+   end component;
+   
+   component ConwayRam
+      port ( clk         : in    std_logic; 
+             we          : in    std_logic; 
+             data_input  : in    std_logic; 
+             address     : in    std_logic_vector (31 downto 0); 
+             data_output : out   std_logic);
+   end component;
+   
    attribute HU_SET of XLXI_50 : label is "XLXI_50_0";
    attribute HU_SET of XLXI_54 : label is "XLXI_54_1";
 begin
@@ -281,18 +281,6 @@ begin
    XLXI_23 : VCC
       port map (P=>XLXN_46);
    
-   XLXI_27 : VGA_Controller
-      port map (clk_108=>XLXN_209,
-                data_in(7 downto 0)=>XLXN_95(7 downto 0),
-                blue(7 downto 0)=>blue(7 downto 0),
-                green(7 downto 0)=>green(7 downto 0),
-                mutex=>XLXN_85,
-                pixel_x(11 downto 0)=>XLXN_69(11 downto 0),
-                pixel_y(11 downto 0)=>XLXN_68(11 downto 0),
-                red(7 downto 0)=>red(7 downto 0),
-                sync_hor=>sync_hor,
-                sync_vert=>sync_vert);
-   
    XLXI_29 : Framebuffer
       port map (clk=>XLXN_209,
                 data_pixel_x(11 downto 0)=>XLXN_198(11 downto 0),
@@ -303,18 +291,11 @@ begin
                 vga_mutex=>XLXN_85,
                 vga_pixel_x(11 downto 0)=>XLXN_69(11 downto 0),
                 vga_pixel_y(11 downto 0)=>XLXN_68(11 downto 0),
-                ram_address(31 downto 0)=>XLXN_78(31 downto 0),
-                ram_data_output(7 downto 0)=>XLXN_94(7 downto 0),
+                ram_address(31 downto 0)=>XLXN_256(31 downto 0),
+                ram_data_output(7 downto 0)=>XLXN_255(7 downto 0),
                 ram_we=>XLXN_63,
                 value_out(7 downto 0)=>XLXN_95(7 downto 0),
                 writeable=>XLXN_195);
-   
-   XLXI_30 : internal_ram
-      port map (address(31 downto 0)=>XLXN_78(31 downto 0),
-                clk=>XLXN_209,
-                data_input(7 downto 0)=>XLXN_94(7 downto 0),
-                we=>XLXN_63,
-                data_output(7 downto 0)=>XLXN_96(7 downto 0));
    
    XLXI_46 : IterationWriter
       port map (clk=>XLXN_209,
@@ -328,13 +309,6 @@ begin
                 framebuffer_data_out(7 downto 0)=>XLXN_199(7 downto 0),
                 framebuffer_take_data=>XLXN_196,
                 ram_addr(31 downto 0)=>XLXN_214(31 downto 0));
-   
-   XLXI_47 : Conway_Ram
-      port map (address(31 downto 0)=>XLXN_213(31 downto 0),
-                clk=>XLXN_209,
-                data_input=>XLXN_234,
-                we=>XLXN_215,
-                data_output=>XLXN_192);
    
    XLXI_49 : MuxAddr32
       port map (addrConway(31 downto 0)=>XLXN_222(31 downto 0),
@@ -374,6 +348,32 @@ begin
                 D1=>XLXN_236,
                 S0=>XLXN_241,
                 O=>XLXN_234);
+   
+   XLXI_56 : VideoRam
+      port map (address(31 downto 0)=>XLXN_256(31 downto 0),
+                clk=>XLXN_209,
+                data_input(7 downto 0)=>XLXN_255(7 downto 0),
+                we=>XLXN_63,
+                data_output(7 downto 0)=>XLXN_96(7 downto 0));
+   
+   XLXI_58 : VgaController
+      port map (clk_108=>XLXN_209,
+                data_in(7 downto 0)=>XLXN_95(7 downto 0),
+                blue(7 downto 0)=>blue(7 downto 0),
+                green(7 downto 0)=>green(7 downto 0),
+                mutex=>XLXN_85,
+                pixel_x(11 downto 0)=>XLXN_69(11 downto 0),
+                pixel_y(11 downto 0)=>XLXN_68(11 downto 0),
+                red(7 downto 0)=>red(7 downto 0),
+                sync_hor=>sync_hor,
+                sync_vert=>sync_vert);
+   
+   XLXI_59 : ConwayRam
+      port map (address(31 downto 0)=>XLXN_213(31 downto 0),
+                clk=>XLXN_209,
+                data_input=>XLXN_234,
+                we=>XLXN_215,
+                data_output=>XLXN_192);
    
 end BEHAVIORAL;
 

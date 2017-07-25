@@ -30,15 +30,15 @@ use IEEE.numeric_std.All;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity internal_ram is
+entity VideoRam is
     Port ( clk : in  STD_LOGIC;
            address : in  std_logic_vector(31 downto 0);
            we : in  STD_LOGIC;
            data_input : in  STD_LOGIC_VECTOR (7 downto 0);
            data_output : out  STD_LOGIC_VECTOR (7 downto 0));
-end internal_ram;
+end VideoRam;
 
-architecture Behavioral of internal_ram is
+architecture Behavioral of VideoRam is
 
 type ram_t is array (0 to 5120) of std_logic_vector(7 downto 0);
 signal ram : ram_t := (others => (others => '1'));

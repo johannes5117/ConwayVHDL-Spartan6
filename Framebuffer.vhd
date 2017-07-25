@@ -1,35 +1,10 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date:    23:34:28 07/10/2017 
--- Design Name: 
--- Module Name:    Framebuffer - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+-- AUTHOR: Johannes Engler
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.All;
 use IEEE.MATH_REAL.ALL;
 
--- Uncomment the following library declaration if using
--- arithmetic functions with Signed or Unsigned values
---use IEEE.NUMERIC_STD.ALL;
-
--- Uncomment the following library declaration if instantiating
--- any Xilinx primitives in this code.
---library UNISIM;
---use UNISIM.VComponents.all;
+-- Framebuffer: saves and provides the image for the VgaController.
 
 entity Framebuffer is
     Port ( clk : in  STD_LOGIC;
@@ -49,34 +24,36 @@ entity Framebuffer is
 end Framebuffer;
 
 architecture Behavioral of Framebuffer is
+
+-- used to find the rising edge on the input take_data
 signal take_data_pre : std_logic:='0';
 
 begin
-
 PROCESS(clk)
 BEGIN
-    if(rising_edge(clk)) then
-        if(vga_mutex='0') then
-				writeable<='1';
-				if(take_data = '1' and take_data_pre = '0') then
-					ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(data_pixel_y))*80 + to_integer(unsigned(data_pixel_x)), ram_address'length));
-					--std_logic_vector(to_unsigned(((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x)) mod 1280)/16)+((to_integer(unsigned(data_pixel_y))*1280 + to_integer(unsigned(data_pixel_x))/(1280*16))*80), ram_address'length));
-					ram_we <= '1';
-					ram_data_output <= value_in;
-				end if;
-				-- Read data from the input
-		  else 
-				writeable<='0';
-				-- proviede data from ram to the output
-				ram_we <= '0';
-				ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(vga_pixel_y))*80+ to_integer(unsigned(vga_pixel_x)), ram_address'length));
-
-				--std_logic_vector(to_unsigned(to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x)), ram_address'length));
-				--std_logic_vector(to_unsigned(((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x)) mod 1280)/16)+((to_integer(unsigned(vga_pixel_y))*1280 + to_integer(unsigned(vga_pixel_x))/(1280*16))*80), ram_address'length));
-				value_out <= ram_data_input;
-		  end if;
-		  take_data_pre <= take_data;
-    end if; 
+if(rising_edge(clk)) then
+	-- only write to the VideoRam if the VgaController is in vsync <-> this prevents graffic glitches. Otherwise read the VideoRam for VgaController.
+	if(vga_mutex='0') then
+		-- signalize the "system" that the framebuffer is writeable
+		writeable<='1';
+		-- take data from bus if rising edge of take_data occurs
+		if(take_data = '1' and take_data_pre = '0') then
+			-- convert x and y notation for pixels into addresses -> to store in the ram
+			ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(data_pixel_y))*80 + to_integer(unsigned(data_pixel_x)), ram_address'length));
+			-- use write modus of ram
+			ram_we <= '1';
+			ram_data_output <= value_in;
+		end if;
+	else 
+		writeable<='0';
+		-- use read modus of ram
+		ram_we <= '0';
+		-- convert x and y notation for pixels into addresses -> to store in the ram
+		ram_address <= std_logic_vector(to_unsigned(to_integer(unsigned(vga_pixel_y))*80+ to_integer(unsigned(vga_pixel_x)), ram_address'length));
+		value_out <= ram_data_input;
+	end if;
+take_data_pre <= take_data;
+end if; 
 END PROCESS;
 end Behavioral;
 
