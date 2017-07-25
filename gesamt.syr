@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: gesamt.prj
 
@@ -225,18 +225,16 @@ WARNING:Xst:647 - Input <data_in<7:3>> is never used. This port will be preserve
     Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_18_o> created at line 85
     Found 7-bit comparator lessequal for signal <VSCALE[6]_GND_14_o_LessThan_21_o> created at line 86
     Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_30_o> created at line 94
-    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_37_o> created at line 99
-    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_38_o> created at line 99
-    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_39_o> created at line 99
-    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_40_o> created at line 99
-    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_41_o> created at line 104
-    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_42_o> created at line 104
-    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_46_o> created at line 112
-    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_47_o> created at line 112
+    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_37_o> created at line 99
+    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_38_o> created at line 99
+    Found 11-bit comparator greater for signal <GND_14_o_HPOS[10]_LessThan_39_o> created at line 104
+    Found 11-bit comparator greater for signal <HPOS[10]_GND_14_o_LessThan_40_o> created at line 104
+    Found 11-bit comparator greater for signal <GND_14_o_VPOS[10]_LessThan_44_o> created at line 112
+    Found 11-bit comparator greater for signal <VPOS[10]_GND_14_o_LessThan_45_o> created at line 112
     Summary:
 	inferred   6 Adder/Subtractor(s).
 	inferred  87 D-type flip-flop(s).
-	inferred  16 Comparator(s).
+	inferred  14 Comparator(s).
 Unit <VGA_Controller> synthesized.
 
 Synthesizing Unit <Framebuffer>.
@@ -528,9 +526,9 @@ Macro Statistics
  8-bit register                                        : 9
 # Latches                                              : 32
  1-bit latch                                           : 32
-# Comparators                                          : 26
+# Comparators                                          : 24
  10-bit comparator greater                             : 1
- 11-bit comparator greater                             : 14
+ 11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
  7-bit comparator greater                              : 5
  7-bit comparator lessequal                            : 4
@@ -551,10 +549,10 @@ Macro Statistics
 =========================================================================
 
 INFO:Xst:2261 - The FF/Latch <blue_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <blue_1> <blue_2> <blue_3> <blue_4> <blue_5> <blue_6> <blue_7> 
-INFO:Xst:2261 - The FF/Latch <pixel_y_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_y_8> <pixel_y_9> <pixel_y_10> <pixel_y_11> 
 INFO:Xst:2261 - The FF/Latch <green_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <green_1> <green_2> <green_3> <green_4> <green_5> <green_6> <green_7> 
-INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
+INFO:Xst:2261 - The FF/Latch <pixel_y_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_y_8> <pixel_y_9> <pixel_y_10> <pixel_y_11> 
 INFO:Xst:2261 - The FF/Latch <pixel_x_7> in Unit <XLXI_27> is equivalent to the following 4 FFs/Latches, which will be removed : <pixel_x_8> <pixel_x_9> <pixel_x_10> <pixel_x_11> 
+INFO:Xst:2261 - The FF/Latch <red_0> in Unit <XLXI_27> is equivalent to the following 7 FFs/Latches, which will be removed : <red_1> <red_2> <red_3> <red_4> <red_5> <red_6> <red_7> 
 INFO:Xst:2261 - The FF/Latch <value_out_signal_0> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_7> 
 INFO:Xst:2261 - The FF/Latch <signal_framebuffer_x_7> in Unit <XLXI_46> is equivalent to the following 26 FFs/Latches, which will be removed : <signal_framebuffer_x_8> <signal_framebuffer_x_9> <signal_framebuffer_x_10> <signal_framebuffer_x_11> <signal_framebuffer_y_7> <signal_framebuffer_y_8> <signal_framebuffer_y_9> <signal_framebuffer_y_10> <signal_framebuffer_y_11> <signal_ram_address_15> <signal_ram_address_16> <signal_ram_address_17> <signal_ram_address_18> <signal_ram_address_19> <signal_ram_address_20> <signal_ram_address_21> <signal_ram_address_22> <signal_ram_address_23> <signal_ram_address_24> <signal_ram_address_25> <signal_ram_address_26> <signal_ram_address_27> <signal_ram_address_28> <signal_ram_address_29> <signal_ram_address_30> <signal_ram_address_31> 
 INFO:Xst:2261 - The FF/Latch <value_out_signal_2> in Unit <XLXI_46> is equivalent to the following FF/Latch, which will be removed : <value_out_signal_5> 
@@ -880,9 +878,9 @@ Macro Statistics
  8-bit up counter                                      : 1
 # Registers                                            : 473
  Flip-Flops                                            : 473
-# Comparators                                          : 26
+# Comparators                                          : 24
  10-bit comparator greater                             : 1
- 11-bit comparator greater                             : 14
+ 11-bit comparator greater                             : 12
  21-bit comparator greater                             : 1
  7-bit comparator greater                              : 5
  7-bit comparator lessequal                            : 4
@@ -1341,16 +1339,16 @@ Top Level Output File Name         : gesamt.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 908
+# BELS                             : 904
 #      BUF                         : 1
 #      GND                         : 1
 #      INV                         : 64
 #      LUT1                        : 88
 #      LUT2                        : 35
-#      LUT3                        : 41
+#      LUT3                        : 42
 #      LUT4                        : 45
-#      LUT5                        : 65
-#      LUT6                        : 250
+#      LUT5                        : 62
+#      LUT6                        : 248
 #      MUXCY                       : 152
 #      MUXF7                       : 3
 #      VCC                         : 1
@@ -1384,16 +1382,16 @@ Selected Device : 6slx45fgg676-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             223  out of  54576     0%  
- Number of Slice LUTs:                 1868  out of  27288     6%  
-    Number used as Logic:               588  out of  27288     2%  
+ Number of Slice LUTs:                 1864  out of  27288     6%  
+    Number used as Logic:               584  out of  27288     2%  
     Number used as Memory:             1280  out of   6408    19%  
        Number used as RAM:             1280
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1966
-   Number with an unused Flip Flop:    1743  out of   1966    88%  
-   Number with an unused LUT:            98  out of   1966     4%  
-   Number of fully used LUT-FF pairs:   125  out of   1966     6%  
+ Number of LUT Flip Flop pairs used:   1961
+   Number with an unused Flip Flop:    1738  out of   1961    88%  
+   Number with an unused LUT:            97  out of   1961     4%  
+   Number of fully used LUT-FF pairs:   126  out of   1961     6%  
    Number of unique control sets:        36
 
 IO Utilization: 
@@ -1450,7 +1448,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_in'
   Clock period: 42.505ns (frequency: 23.527MHz)
-  Total number of paths / destination ports: 17464 / 3502
+  Total number of paths / destination ports: 17444 / 3502
 -------------------------------------------------------------------------
 Delay:               9.446ns (Levels of Logic = 5)
   Source:            XLXI_53/Maddsub_VPOS[6]_PWR_20_o_MuLt_110_OUT (DSP)
@@ -1508,12 +1506,12 @@ clk_in         |    9.446|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 17.00 secs
-Total CPU time to Xst completion: 17.78 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 19.42 secs
  
 --> 
 
-Total memory usage is 214600 kilobytes
+Total memory usage is 214472 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :  454 (   0 filtered)

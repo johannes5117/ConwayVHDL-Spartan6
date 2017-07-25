@@ -96,7 +96,7 @@ IF(rising_edge(clk_108))THEN
 		green<=(others=>'0');
 		blue<=(others=>'0');
 	END IF;
-   IF((HPOS>10 AND HPOS<398) OR (VPOS>10 AND VPOS<32))THEN
+   IF((VPOS>10 AND VPOS<32))THEN
 		mutex <= '0';
 	else
 		mutex <= '1';
